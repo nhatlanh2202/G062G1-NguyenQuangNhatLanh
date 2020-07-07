@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện Tích Hình Tròn</title>
+</head>
+<body>
+<form method="post">
+    <h2>Tính Diện Tích Hình Tròn</h2><br><br>
+    <label>R<input type="text" id="bankinh" value=""></label><br>
+    <input type="button" onclick="tinhdientich()" value="."><br>
+    <label>S<input type="text" id="dientich" value=""></label>
+</form>
+<script>
+    function tinhdientich() {
+        let r = parseInt(document.getElementById("bankinh").value);
+        let s = ( r * r) * 3.14;
+        document.getElementById("dientich").value = s;
+    }
+</script>
+</body>
+</html>
