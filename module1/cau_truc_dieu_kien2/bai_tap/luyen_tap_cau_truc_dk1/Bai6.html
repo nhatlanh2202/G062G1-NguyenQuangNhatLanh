@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let doanhSo = parseInt(prompt("doanh số tháng vừa rồi: (đơn vị triệu VND)"));
+    let hoaHong;
+    if (doanhSo > 10){
+        hoaHong = doanhSo / 10;
+        alert("hoa hồng tháng này nhận được " + hoaHong + "triệu VND");
+    }else if (doanhSo <= 10){
+        alert("nhân viên không nhận được hoa hồng");
+    }
+</script>
+</body>
+</html>

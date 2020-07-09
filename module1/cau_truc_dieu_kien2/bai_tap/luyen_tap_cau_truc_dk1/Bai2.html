@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tuổi Học Sinh</title>
+</head>
+<body>
+<input type="text" id="tuoi" value="">
+<input type="button" id="kiemtra" value="kiểm tra" onclick="check()">
+<script>
+    function check() {
+        let a = parseInt(document.getElementById("tuoi").value);
+        if ( a > 15 || a < 18 ){
+            alert(" đủ điểu kiện vào lớp mười");
+        }else alert("không đủ điều kiện vào lớp mười");
+    }
+</script>
+</body>
+</html>

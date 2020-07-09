@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<input type="text" id="number" value="">
+<input type="button" id="kiemtra" value="kiểm tra" onclick="check()">
+<script>
+    function check() {
+        let a = parseInt(document.getElementById("number").value);
+        if ( a > 0){
+            alert("" + a  + " lớn hơn 0").value;
+        }else alert("" + a + " bé hơn 0").value;
+    }
+</script>
+</body>
+</html>
