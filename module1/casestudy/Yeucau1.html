@@ -17,14 +17,7 @@
     let rentDays=prompt("Nhập số ngày thuê");
     let typeOfService=prompt("Nhập loại dịch vụ:\nVilla: 500$/1 ngày\nHouse: 300$/1 ngày\nRoom: 100$/1 ngày");
     let kindOfRoom=prompt("Nhập loại phòng:\nVip\nBusiness\nNormal");
-    let monNey;
-    if (typeOfService==="Villa"){
-        monNey=500;
-    }else if (typeOfService==="House"){
-        monNey=300;
-    }else {
-        monNey=100;
-    }
+    let totalPay;
     alert("1.Tên khách hàng: "+fullName+"" +
         "\n"+"2.Số CMND: "+idCard+"" +
         "\n"+"3.Ngày sinh: "+dateOfBirth+"" +
@@ -37,7 +30,7 @@
         "\n"+"10.Loại dịch vụ: "+typeOfService+"" +
         "\n"+ "11.Loại phòng: "+kindOfRoom+"" +
         "\n"+"12.Số tiền phải trả là: "+
-        (parseInt(monNey)*parseInt(rentDays)*(1-(parseInt(disCount)/100)))+"$")
+        (parseInt(totalPay)*parseInt(rentDays)*(1-(parseInt(disCount)/100)))+"$")
 </script>
 </body>
 </html>

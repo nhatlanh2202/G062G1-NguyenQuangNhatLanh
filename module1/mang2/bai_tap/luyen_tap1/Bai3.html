@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let number = prompt("nhập độ dài của mảng: ");
+    let i = 0;
+    let array = [];
+    while (i < number){
+        a = parseInt(prompt("nhập một số nguyên vào mảng"));
+        array.push(a);
+        i++;
+    }
+    document.writeln("mảng vừa tạo bao gồm: " + number + " số " + array + "<br><br>");
+    let max = array[0];
+    let sum = 0 ;
+    for (let i=0; i<array.length; i++){
+        sum += array[i];
+        if (max < array[i]){
+            max = array[i];
+        }
+    }let trungbinh = (sum / number) ;
+    document.writeln("số lớn nhất trong mảng là: " + max + " trung bình của: " + max + " là " + trungbinh)
+</script>
+</body>
+</html>

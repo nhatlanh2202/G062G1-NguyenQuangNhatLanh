@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+<h1 id="xuatKetQua"></h1>
+<script>
+    let word = prompt("Nhập từ cần tìm:");
+    let engLish = ["school","class","student","teacher","laptop"];
+    let tiengViet = ["Trường học","Lớp","Học sinh","Giáo viên","Máy tính xách tay"];
+    for (let i=0;i<engLish.length;i++) {
+        if (word == engLish[i]){
+            document.getElementById("xuatKetQua").innerHTML = "Nghĩa tiếng Việt của từ đó là : " + tiengViet[i] + " . Từ đó ở vị trí thứ : " + i;
+            break;
+        }
+        else document.getElementById("xuatKetQua").innerHTML = "Không có kết quả cho từ này !!!" + "<br>"
+    }
+</script>
+</body>
+</html>

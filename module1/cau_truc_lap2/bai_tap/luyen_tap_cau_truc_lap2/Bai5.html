@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    laiNganHang();
+    function laiNganHang() {
+        let soTienVay = Number(prompt("Nhập số tiền bạn vay ));
+        let laiSuatThang = Number(prompt("Phần trăm lãi suất hàng tháng"));
+        let soThang = Number(prompt("Số tháng cho vay là:"));
+        let soThang1;
+        if ((laiSuatThang < 0) || (soTienVay < 0) || (soThang < 0)) {
+            alert("Các thông số có giá trị âm là sai")
+            laiNganHang();
+        } else {
+            for (soThang1 = 1; soThang1 <= soThang; soThang1++) {
+                soTienVay = soTienVay + (soTienVay * laiSuatThang / 100)
+            }
+            document.write("Số tiền bạn phải trả khi hết thời hạng là: "+soTienVay+" triệu VNĐ");
+        }
+    }
+</script>
+</body>
+</html>

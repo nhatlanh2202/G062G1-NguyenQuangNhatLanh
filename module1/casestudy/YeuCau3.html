@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ten = "Nguyễn Văn A";
+    let idCard = "201722297";
+    let dateOfBirth = "9/1/2000";
+    let email = "vana@code.com";
+    let address = "Đà Nẵng";
+    let customer = "Diamond";
+    let giamGia = 10;
+    let soLuong = 10;
+    let rentDays = 12;
+    let typeOfService = "Villa";
+    let kindOfRoom = "vip";
+    let monney;
+    let amountCustomer;
+    let date1 = '02/17/1996';
+    menu();
+    function tinh() {
+        let currentYear = new Date().getFullYear();
+        let birthday = new Date(date1).getFullYear();
+        let ageCustomer = currentYear - birthday;
+        if (typeOfService === "Villa") {
+            monney = 500;
+        } else if (typeOfService === "House") {
+            monney = 300;
+        } else {
+            monney = 100;
+        }
+        let amount = (parseInt(monney) * parseInt(rentDays) * (1 - (parseInt(giamGia) / 100)));
+        let monneysale = 0;
+        if (address === "Đà Nẵng") {
+            if (ageCustomer >= 30) {
+                monneysale += 22;
+            } else {
+                if (ageCustomer >= 20) monneysale += 21;
+                else monneysale += 20;
+            }
+        } else {
+            if (address === "Huế") monneysale += 10;
+            else {
+                if (address === "Quảng Nam") monneysale += 5;
+            }
+        }
+        switch (customer) {
+            case "Diamond":
+                monneysale += 15;
+                break;
+            case "Platium":
+                monneysale += 10;
+                break;
+            case "Gold":
+                monneysale += 5;
+                break;
+            case "Silver":
+                monneysale += 2;
+                break;
+            case "Member":
+                monneysale += 1;
+                break;
+        }
+        (rentDays >= 7) ? monneysale += 30 : (rentDays >= 5) ? monneysale += 20 : monneysale += 10;
+        amountCustomer = amount - monneysale;
+    }
+    function show() {
+        tinh();
+        alert("1.Tên khách hàng: " + ten + "\n" +
+            "2.Số CMND: " + idCard + "\n" +
+            "3.Ngày sinh: " + dateOfBirth + "\n" +
+            "4.Email: " + email + "\n" +
+            "5.Địa chỉ: " + address + "\n" +
+            "6.Loại Customer: " + customer + "\n" +
+            "7.Phần trăm giảm giá: " + giamGia + "%" + "\n" +
+            "8.Số lượng đi kèm: " + soLuong + "\n" +
+            "9.Số ngày thuê: " + rentDays + "\n" +
+            "10.Loại dịch vụ: " + typeOfService + "\n" +
+            "11.Loại phòng: " + kindOfRoom + "\n" +
+            "12.Số tiền Customer phải trả là: " + amountCustomer + "$");
+        menu();
+    }
+    function menu() {
+        let choose = prompt("Nhập thao tác muốn thực hiện:\n1.show\n2.edit");
+        switch (choose) {
+            case "1":
+                show();
+                break;
+            case "2":
+                edit();
+                break;
+            default:
+                alert("false");
+                break;
+        }
+        menu();
+    }
+    function fixText(nhap) {
+        let dem=0;
+        let lowNhap=nhap.toLowerCase();
+        let name="";
+        for(;dem<nhap.length;dem++){
+            if (lowNhap.charAt(dem)==" " && lowNhap.charAt(dem+1)==" "){
+                continue;
+            }
+            if(dem==0 || lowNhap.charAt(dem-1)==" "){
+                name=name+lowNhap.charAt(dem).toUpperCase();
+                continue;
+            }
+            name=name+lowNhap.charAt(dem);
+        }
+        return name;
+    }
+    function edit() {
+        tinh();
+        let choose = prompt("1.Tên khách hàng: " + ten + "\n" +
+            "2.Số CMND: " + idCard + "\n" +
+            "3.Ngày sinh: " + dateOfBirth + "\n" +
+            "4.Email: " + email + "\n" +
+            "5.Địa chỉ: " + address + "\n" +
+            "6.Loại Customer: " + customer + "\n" +
+            "7.Phần trăm giảm giá: " + giamGia + "%" + "\n" +
+            "8.Số lượng đi kèm: " + soLuong + "\n" +
+            "9.Số ngày thuê: " + rentDays + "\n" +
+            "10.Loại dịch vụ: " + typeOfService + "\n" +
+            "11.Loại phòng: " + kindOfRoom + "\n" +
+            "12.Số tiền Customer phải trả là: " + amountCustomer + "$");
+        switch (choose) {
+            case "1":
+                ten = prompt("Nhập lại tên:");
+                ten=fixText(ten);
+                break;
+            case "2":
+                do {
+                    idCard = prompt("Nhập lại CMND");
+                    let number = Number(idCard);
+                    alert(isNaN(idCard));
+                    if (isNaN(idCard) || idCard.length != 9 || idCard.indexOf("+") > -1 || Number(idCard) < 0 || !Number.isInteger(number)) {
+                        alert("CMND phải là số nguyên dương và có 9 số");
+                        continue;
+                    } else
+                        break;
+                }
+                while (1);
+                break;
+            case "3":
+                do {
+                    dateOfBirth = prompt("Nhập lại ngày sinh theo định dạng \n DD/MM/YYYY");
+                    let textDay = dateOfBirth.indexOf("/");
+                    let textMonth = dateOfBirth.lastIndexOf("/");
+                    let textYear = dateOfBirth.length;
+                    let deadDauCong = dateOfBirth.indexOf("+");
+                    let deadDauCham = dateOfBirth.indexOf(".");
+                    let day = Number(dateOfBirth.slice(0, 2));
+                    let month = Number(dateOfBirth.slice(3, 5));
+                    let year = Number(dateOfBirth.slice(6, 10));
+                    if (isNaN(day) || day <= 0 ||
+                        isNaN(month) || month <= 0 ||
+                        isNaN(year) || year <= 0 ||
+                        deadDauCham != -1 ||
+                        deadDauCong != -1 ||
+                        textDay != 2 || textMonth != 5 || textYear != 10 ||
+                        year <= new Date().getFullYear()) {
+                        alert("Định dạng ngày là số và có kiểu là DD/MM/YYYY\nVí dụ:02/11/1996");
+                    } else {
+                        if (day > 31 || month > 12 ||
+                            day > 29 && month == 2 ||
+                            day > 30 && (month == 4 || month == 6 || month == 9 || month == 11)) {
+                            alert("Một tháng có 31 ngày và chỉ có 12 tháng \n" +
+                                "Tháng 2 chỉ có 28 hoặc 29 ngày\n" +
+                                "Các tháng 2,4,6,9,11 chỉ có 30 ngày");
+                        } else {
+                            date1 = new Date(year, month, day);
+                            break;
+                        }
+                    }
+                }
+                while (1);
+                alert(dateOfBirth);
+                break;
+            case "4":
+                do {
+                    email = prompt("Nhập lại email:");
+                    let aCong = email.indexOf("@");
+                    let dauCham = email.lastIndexOf(".");
+                    if (email == "") {
+                        alert("Email không được để trống");
+                        continue;
+                    } else if ((aCong < 3) || (dauCham < aCong + 4) || dauCham + 4 > email.length) {
+                        alert("Email phải có dạn abc@abc.abc");
+                        continue;
+                    }
+                    break;
+                }
+                while (1);
+                break;
+            case "5":
+                address = prompt("Nhập lại địa chỉ:");
+                address=fixText(address);
+                break;
+            case "6":
+                customer = prompt("Nhập lại loại customer:\nDiamond, Platinum, Gold, Silver, Member");
+                customer=fixText(customer);
+                break;
+            case "7":
+                do {
+                    giamGia = Number(prompt("Nhập lại giảm giá:"));
+                    if (isNaN(giamGia) || giamGia < 0 || Number.isInteger(giamGia)) {
+                        alert("Phần trăm giảm giá phải là số Nguyên dương")
+                        continue;
+                    } else
+                        break;
+                }
+                while (1);
+                break;
+            case "8":
+
+                do {
+                    soLuong = Number(prompt("Nhập lại số lượng người đi cùng:"));
+                    if (isNaN(soLuong) || soLuong < 0 || !Number.isInteger(soLuong)) {
+                        alert("Số người đi kèm phải là số Nguyên dương");
+                        continue;
+                    } else
+                        break;
+                }
+                while (1);
+                break;
+            case "9":
+                do {
+                    rentDays = Number(prompt("Nhập lại số ngày thuê:"));
+                    if (isNaN(rentDays) === true || rentDays < 0 || !Number.isInteger(rentDays)) {
+                        alert("Số ngày thuê phải là số Nguyên dương");
+                        continue;
+                    } else
+                        break;
+                }
+                while (1);
+                break;
+            case "10":
+                typeOfService = prompt("Nhập lại loại dịch vụ:\nVilla:500$/1 ngày\nHouse:300$/1 ngày\nRoom:100$/1 ngày");
+                break;
+            case "11":
+                kindOfRoom = prompt("Nhập lại loại phòng:\nVip, Business,  Normal");
+                break;
+            default:
+                alert("false");
+                break;
+        }
+        show()
+    }
+</script>
+</body>
+</html>
+</body>
+</html>

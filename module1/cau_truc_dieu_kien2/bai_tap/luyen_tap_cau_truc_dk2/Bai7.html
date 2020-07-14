@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<input type="number" id="a">
+<input type="number" id="b">
+<input type="number" id="c">
+<input type="button" id="nghiem" value="tính nghiệm" onclick="timNghiem()">
+<script>
+    function timNghiem() {
+        let nA = parseFloat(document.getElementById("a").value);
+        let nB = parseFloat(document.getElementById("b").value);
+        let nC = parseFloat(document.getElementById("c").value);
+        let delta;
+        delta = Math.pow(nB,2)-4*nA*nC;
+        if (delta > 0){
+            alert(` Phương trình ${nA}x^2 + ${nB}x + ${nC} = 0 có 2 nghiệm phân biệt: x1 = ${(-nB+Math.sqrt(delta))/2/nA} và x2 =${(-nB-Math.sqrt(delta))/2/nA}`);
+        }
+        else if (delta == 0) {
+            alert(` Phương trình ${nA}x^2 + ${nB}x + ${nC} = 0 có nghiệm kép x1 = x2 = ${-nB/2/nA}`);
+        }
+        else {
+            alert(` Phương trình ${nA}x^2 + ${nB}x + ${nC} = 0 vô nghiệm`);
+        }
+    }
+</script>
+</body>
+</html>

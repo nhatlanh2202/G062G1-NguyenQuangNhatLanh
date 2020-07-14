@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    let f0 = 0;
+    let f1 = 1;
+    let f2;
+    let num = 0;
+    while (count<18){
+        f2=f0+f1;
+    f0=f1;
+    f1=f2;
+    count++;
+    num=num+f2;
+    }
+    num = num +f0+f1;
+    alert(num);
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let chuoi = parseInt(prompt("nhập vào một chuỗi: "));
+    let count = 0;
+    for (let i=0; i<chuoi.length-1; i++){
+        if ((chuoi[i]==="-")&&parseInt(chuoi[i+1])>0);{
+            count++;
+        }
+    }
+    document.write("chuỗi số nguyên âm:" + count)
+</script>
+</body>
+</html>
