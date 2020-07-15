@@ -5,18 +5,14 @@
     <title>Từ Điển</title>
 </head>
 <body>
-<h1 id="xuatKetQua"></h1>
 <script>
-    let word = prompt("Nhập từ cần tìm:");
-    let engLish = ["school","class","student","teacher","laptop"];
-    let tiengViet = ["Trường học","Lớp","Học sinh","Giáo viên","Máy tính xách tay"];
-    for (let i=0;i<engLish.length;i++) {
-        if (word == engLish[i]){
-            document.getElementById("xuatKetQua").innerHTML = "Nghĩa tiếng Việt của từ đó là : " + tiengViet[i] + " . Từ đó ở vị trí thứ : " + i;
-            break;
-        }
-        else document.getElementById("xuatKetQua").innerHTML = "Không có kết quả cho từ này !!!" + "<br>"
-    }
+    let input = prompt("Input a string:")
+    let e =[["hello","xin chào"],["world","thế giới"],["table","cái bàn"],["earth","trái đất"],["king","vua"]];
+    let t = e.find(e=>{
+        return e[0]==input;
+    });
+    let res= typeof t=="undefined"?"No result": t[1];
+    document.write(res);
 </script>
 </body>
 </html>
