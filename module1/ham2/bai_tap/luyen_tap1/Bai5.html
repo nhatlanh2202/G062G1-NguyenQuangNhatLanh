@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<input id="starName" onchange="findStar(value)" oninput="findStar(value)" type=" text">
+<br>
+<br>
+<input id="constellation" type="text" disabled>
+<script>
+    let stars = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let constellations = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    function findStar(starName) {
+        let index = stars.indexOf(starName);
+        if (index >= 0) {
+            document.getElementById('constellation').value = constellations[index];
+        } else {
+            document.getElementById('constellation').value = 'not found';
+        }
+    }
+</script>
+</body>
+</html>

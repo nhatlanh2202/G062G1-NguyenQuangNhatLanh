@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Chuyển đổi giữa feet và meter</h1>
+<select id="chuyen">
+    <option value="feet">Feet</option>
+    <option value="meter">Meter</option>
+</select>
+<br>
+<br>
+<select id="doi">
+    <option value="meter">Meter</option>
+    <option value="feet">Feet</option>
+</select>
+<br>
+<br>
+<input id="nhapso">
+<p id="demo"></p>
+<button onclick="chuyendoi()" value="Chuyển đổi">Chuyển đổi</button>
+<script>
+    function chuyendoi() {
+        let nhapSo = document.getElementById("nhapso").value;
+        let fChuyen = document.getElementById("chuyen").value;
+        let fDoi = document.getElementById("doi").value;
+        let result = 0;
+        if (fChuyen == "feet" && fDoi == "meter"){
+            result = nhapSo * 0.305;
+        }else {
+            if (fChuyen == "meter" && fDoi == "feet"){
+                result = nhapSo * 3.279;
+            }else {
+                result = "Bạn đã chọn sai";
+            }
+        }
+        document.getElementById("demo").innerHTML = result;
+    }
+</script>
+</body>
+</html>

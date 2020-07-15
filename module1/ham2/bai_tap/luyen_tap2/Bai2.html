@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let banKinh = parseInt(prompt("nhập bán kính của hình tròn: "));
+    document.writeln("Diện Tích = " + tinhDienTich(banKinh));
+    document.writeln("Chu Vi = " + tinhChuVi(banKinh));
+    function tinhDienTich(r) {
+        return 3.14 * r * r;
+    }
+    function tinhChuVi(r) {
+        return r * 2 * 3.14;
+    }
+</script>
+</body>
+</html>
