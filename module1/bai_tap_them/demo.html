@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let infoCustomer = ["Tên","CMND","Ngày,Tháng,Năm sinh","Email","Địa Chỉ","Loại Customer","Phần giảm giá",
+        "Số lượng đi kèm","Số ngày thuê","Loại dịch vụ","Loại phòng"];
+    let arrListCustomer = new Array();
+    let info;
+    let j=0;
+    let customer;
+    let soThuTu;
+    displayMainMenu();
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1.Add New Customer." + "\n" + "2.Display Information Customer."
+            + "\n" + "3.Edit Information Customer." + "\n" + "4.Delete Customer." + "\n" + "5.Exit."));
+        switch (choose) {
+            case 1:
+                addNewCustomer();
+                break;
+            case 2:
+                alert(displayInformationCustomer());
+                displayMainMenu();
+                break;
+            case 3:
+                editInformationCustomer();
+                break;
+            case 4:
+                deleCustomer();
+                break;
+            case 5:
+                break;
+            default : {
+                alert("Failed");
+                displayMainMenu();
+            }
+        }
+    }
+    function addNewCustomer() {
+        arrListCustomer[j] = new Array();
+        for (let i=0;i<infoCustomer.length;i++){
+            let inputInfo = prompt("Nhập " + infoCustomer[i] + " : ");
+            arrListCustomer[j].push(infoCustomer[i] + ' : ' + inputInfo);
+        }
+        alert(arrListCustomer[j].join("\n"));
+        j++;
+        displayMainMenu();
+    }
+    function displayInformationCustomer(j) {
+            info = "";
+            for (let i=0;i < infoCustomer.length ;i++){
+                info += (i+1) + ' . ' + arrListCustomer[j][i] + '\n';
+            }
+            return info;
+        }
+    function nameAndCmnd() {
+        let nameVaCmnd = "";
+        soThuTu = 1;
+        for (let i=0; i<arrListCustomer; i++){
+            nameVaCmnd += soThuTu + " . ";
+            for (let i=0;)
+        }
+    }
+</script>
+</body>
+</html>

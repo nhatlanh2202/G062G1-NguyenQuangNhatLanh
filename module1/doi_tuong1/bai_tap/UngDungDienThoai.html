@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile{
+        constructor() {
+            this.pin = 100;
+            this.write = [];
+            this.inbox  = [];
+            this.sent  = [];
+            this.status = true;
+        }
+        getStatus(){
+            return this.status
+        }
+        OnOff(){
+            if (this.status == "On"){
+                this.status == "Off";
+            }else {
+                this.status = "On"
+            }
+        }
+        charging(){
+            this.pin = 100;
+        }
+        toWrite(){
+            let message = prompt("nhập vào tin nhắn");
+            this.write.push(message);
+            return message;
+        }
+        toSent(Mobile){
+            this.sent = this.write;
+            Mobile.inbox = this.sent;
+            alert("tin nhắn đã gởi: " + this.write);
+        }
+        showMess(){
+            alert("nhận được tin nhắn: " + this.inbox);
+        }
+    }
+    let nokia = new Mobile(100,"nokia");
+    let iphone = new Mobile(100,"iphone");
+    nokia.toWrite();
+    nokia.toSent(iphone);
+    iphone.showMess();
+</script>
+</body>
+</html>

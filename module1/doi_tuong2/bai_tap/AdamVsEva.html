@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam & Eva</title>
+</head>
+<body>
+<script>
+    function Apple() {
+        this.weight= 10;
+        this.getWeight= function () {
+            return this.weight;
+        };
+        this.empty= function () {
+            if(this.weight<=0) {
+                return false;
+            }else {
+                return true;
+            }
+        }
+    }
+    function Human(name,gender,weight) {
+        this.name= name;
+        this.gender= gender;
+        this.weight=weight;
+        this.getName= function () {
+            return this.name;
+        };
+        this.getWeight= function () {
+            return this.weight
+        };
+        this.setName= function (newName) {
+            this.name= newName;
+        };
+        this.setWeight= function (newWeight) {
+            this.weight= newWeight;
+        };
+        this.setGender= function (newGender) {
+            this.gender= newGender;
+        };
+        this.Say= function () {
+            this.Say = message()
+        };
+        this.eat= function (apple) {
+            if(apple.getWeight()>0) {
+                this.weight ++;
+                apple.weight --;
+            }
+        };
+        this.checkApple= function (apple,name) {
+            alert(" khối lượng của Apple là: " + apple.getWeight() + " khối lượng của " + name +" là: " + this.weight)
+        }
+    }
+    let message = prompt("Adam said: ");
+    prompt("Eva: ");
+    let apple1= new Apple();
+    let Adam= new Human('Adam',true,60);
+    let Eva= new Human('Eva',false,50);
+    while(apple1.empty()>0 ) {
+        Adam.eat(apple1);
+        Adam.checkApple(apple1, Adam.getName());
+        Eva.eat(apple1);
+        Eva.checkApple(apple1,Eva.getName());
+    }
+    alert("Hết rồi.")
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yêu cầu 4</title>
+</head>
+<body>
+<script>
+    let arrNameCustomer = ["Phong","Hoa","Tuyết","Nguyệt","Vân","Vũ","Thiên","Địa"];
+    let customersNumber;
+    menu();
+    function menu() {
+        let menu1 = parseInt(prompt("1.Show Customer: " + "\n" + "2.Add Customer: " + "\n" + "3.Delete Customer: "));
+        switch (menu1) {
+            case 1:
+                showCustomer();
+                break;
+            case 2:
+                addCustomer();
+                break;
+            case 3:
+                deleteCustomer();
+        }
+    }
+    function showCustomer() {
+        alert(arrNameCustomer.join("\n"));
+        menu();
+    }
+    function addCustomer() {
+        customersNumber = parseInt(prompt("Nhập số lượng Customer muốn thêm: "));
+        for (let i=0; i<customersNumber; i++){
+            let nameCustomer = prompt("Nhập tên Customer thứ " + (i + 1));
+            arrNameCustomer.push(nameCustomer);
+        }
+        showCustomer();
+    }
+    function deleteCustomer() {
+        let nameCustomer = prompt("Nhập Customer muốn xóa: ");
+        for (let i=0; i<arrNameCustomer.length;i++){
+            if (arrNameCustomer[i]===nameCustomer){
+                arrNameCustomer.splice(i,1);
+            }
+        }
+        let result= "";
+        arrNameCustomer.sort().join("\n");
+        for (let i=0; i<arrNameCustomer.length; i++){
+            result += (i + 1) + "" + arrNameCustomer[i] + "\n";
+        }
+        showCustomer();
+    }
+</script>
+</body>
+</html>

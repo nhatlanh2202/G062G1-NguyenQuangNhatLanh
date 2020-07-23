@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình Chữ Nhật</title>
+</head>
+<body>
+<p id="hienThi"></p>
+<canvas id="myCanvas" width="1000px" height="500px" style="border:1px solid red;">
+</canvas>
+<script>
+    class hChuNhat {
+        constructor(chieudai,chieurong){
+            this.chieudai = chieudai;
+            this.chieurong = chieurong;
+        }
+        setchieudai(chieudai){
+            this.chieudai = chieudai;
+        }
+        setchieurong(chieurong){
+            this.chieurong = chieurong;
+        }
+        getchuvi(){
+            return (this.chieudai + this.chieurong) * 2 ;
+        }
+        getdientich(){
+            return this.chieudai * this.chieurong;
+        }
+    }
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+    ctx.fillRect(50,50,700,350);
+    let hinhChuNhat = new hChuNhat();
+    hinhChuNhat.setchieudai(500);
+    hinhChuNhat.setchieurong(1000);
+    document.getElementById("hienThi").innerHTML = ("Chu Vi: " + hinhChuNhat.getchuvi() + "<br>" + "Diện tích: " + hinhChuNhat.getdientich());
+</script>
+</body>
+</html>

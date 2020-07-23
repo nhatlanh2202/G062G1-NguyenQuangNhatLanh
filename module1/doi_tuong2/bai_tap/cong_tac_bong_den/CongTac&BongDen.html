@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="lightOff.png" id="lamp">
+<input type="button" id="switchbutton" onclick="switchLampStatus()" value="Switch">
+<h5 id="result">Bóng đèn đang tắt</h5>
+<script>
+    class ElectricLamp{
+        constructor(status) {
+            this.status = status;
+        };
+        turnOff(){
+            this.status = false;
+        }
+        turnOn(){
+            this.status = true;
+        }
+    }
+    class SwitchButton{
+        constructor(status,lamp) {
+            this.status = status;
+            this.lamp = lamp;
+        }
+        connectToLamp(){
+            this.status =true;
+        }
+        switchOn(){
+            this.lamp.turnOn();
+        }
+        switchOff(){
+            this.lamp.turnOff();
+        }
+    }
+    let lamp = new ElectricLamp(false);
+    let button = new SwitchButton(false);
+    let lamp_element = document.getElementById("lamp");
+    function switchLampStatus() {
+        button.connectToLamp(lamp);
+        if (lamp.status){
+            lamp.turnOff();
+            lamp_element.src = "lightOff.png";
+            document.getElementById("result").innerHTML = "Bóng đèn đang tắt";
+        }else {
+            lamp.turnOn();
+            lamp_element.src = "lightOn.png";
+            document.getElementById("result").innerHTML = "Bóng đèn đã bật";
+        }
+    }
+</script>
+</body>
+</html>
