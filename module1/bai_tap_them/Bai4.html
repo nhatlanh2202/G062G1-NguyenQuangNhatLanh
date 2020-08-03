@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let n=parseFloat(prompt("nhâp n"));
+    let sum = 15;
+    let giaiThua2 = 1;
+    for(let i=1;i<=n;i++){
+        for (let j=1;j<=i;j++){
+            giaiThua2 = giaiThua2*j;
+        }
+        sum = sum + Math.pow((-1),i)/giaiThua2;
+        giaiThua2=1;
+    }
+    alert(sum)
+</script>
+</body>
+</html>

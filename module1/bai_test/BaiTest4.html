@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test 4</title>
+</head>
+<body>
+<p id="hienThi"></p>
+<script>
+    class HocSinh {
+        constructor(soThuTu, hoVaTen, ngaySinh, diemTrungBinh) {
+            this.soThuTu = soThuTu;
+            this.hoVaTen = hoVaTen;
+            this.ngaySinh = ngaySinh;
+            this.diemTrungBinh = diemTrungBinh;
+        }
+
+        setSoThuTu(soThuTu) {
+            this.soThuTu = soThuTu;
+        }
+
+        setHoVaTen(hoVaTen) {
+            this.hoVaTen = hoVaTen;
+        }
+
+        setNgaySinh(ngaySinh) {
+            this.ngaySinh = ngaySinh;
+        }
+
+        setDiemTrungBinh(diemTrungBinh) {
+            this.diemTrungBinh = diemTrungBinh;
+        }
+        getSoThuTu(){
+            return this.soThuTu;
+        }
+        getHoVaTen(){
+            return this.hoVaTen;
+        }
+        getNgaySinh(){
+            return this.ngaySinh;
+        }
+        getDiemTrungBinh(){
+            return this.diemTrungBinh;
+        }
+    }
+    let danhSachHocSinh = new Array();
+    let hocSinh = ["Nguyễn Văn An","20/12/2000","8.5"];
+    let hocSinh1 = ["Tần An Nhiên","22/02/2000","6"];
+    let hocSinh2 = ["Võ Lục Bom","12/12/2000","3"];
+    danhSachHocSinh.push(hocSinh,hocSinh1,hocSinh2);
+    display(danhsach);
+    function display(danhsach) {
+        doDaiDanhSach = danhsach.length;
+        let bang = "<table border=\"1\">\n" +
+            "    <tr>\n" +
+            "        <th>Số Thứ Tự</th>\n" +
+            "        <th>Tên Học Sinh</th>\n" +
+            "        <th>Ngày Sinh</th>\n" +
+            "        <th>Điểm</th>\n" +
+            "    </tr>";
+        for (let i=0; i<doDaiDanhSach; i++){
+            bang += "<tr>\n" +
+                "<td>" + this.soThuTu.getSoThuTu() + "</td>" +
+                "<td>" + this.hoVaTen.getHoVaTen()   + " </td> " +
+                "<td>" + this.ngaySinh.getNgaySinh() +  "</td>" +
+                "<td>" +   this.diemTrungBinh.getDiemTrungBinh()   +  "</td>";
+            bang += "</tr>";
+        }
+        document.getElementById("hienThi").innerHTML = bang;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("nhập một số nguyên");
+    n.split("");
+    let sum = 0;
+    let tich = 1;
+    for (let i=0; i<n.length; i++){
+        sum = sum + parseInt(n[i]);
+        tich = tich * parseInt(n[i]);
+    }
+    document.write("tổng " + n + " là " + sum + "<br>");
+    document.write("tích " + n + " là " + tich);
+</script>
+</body>
+</html>

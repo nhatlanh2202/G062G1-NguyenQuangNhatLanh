@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = parseInt(prompt("nhập số lượng phần từ"));
+    let a = [];
+    for (let i=0; i<num; i++){
+        let add = Number(prompt("nhập các phần tử: " + i));
+        a.push(add);
+    }
+    let b = parseInt(prompt("nhập số muốn kiểm tra"));
+    let check = false;
+    for (let i=0; i<a.length; i++){
+        if (b===a[i]){
+            document.writeln(b + " có ở trong mảng");
+            check = true;
+        }
+    }
+    if(!check){
+        document.writeln(b + " không có ở trong mảng")
+    }
+</script>
+</body>
+</html>

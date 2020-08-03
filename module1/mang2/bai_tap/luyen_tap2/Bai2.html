@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let i = [ 'c', 's', 'c', '2', '6', '1'];
+    let a = 0;
+    let b = i.length - 1;
+    let c;
+    while (a < b){
+        c = i[a];
+        i[a] = i[b];
+        i[b] = c;
+        a++;
+        b--;
+    }
+    document.writeln(i.join("--"))
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<input type="text" id="giatri" value="">
+<select id="donvido">
+    <option value="met">mét</option>
+    <option value="feet">feet</option>
+</select>
+<br>
+<br>
+<input type="button" value="chuyển đổi" onclick="chuyenDoi()">
+<p id="ketqua"></p>
+<script>
+    function chuyenDoi() {
+        let nhapGiaTri = parseInt(document.getElementById("giatri").value);
+        let giaTriRa;
+        let loaiDonVi = document.getElementById("donvido").value;
+        switch (loaiDonVi) {
+            case "met":
+                giaTriRa = nhapGiaTri * 3.2808 ;
+                document.getElementById("ketqua").innerText = "" + giaTriRa + " feet";
+                break;
+            case "feet":
+                giaTriRa = nhapGiaTri / 3.2808 ;
+                document.getElementById("ketqua").innerText = "" + giaTriRa + " m";
+                break;
+        }
+    }
+</script>
+</body>
+</html>

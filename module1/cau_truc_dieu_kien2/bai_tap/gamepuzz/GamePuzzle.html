@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>game</title>
+</head>
+<body>
+<img id="hinh1" src="trump1.png" onclick="doiHinh('hinh1');">
+<img id="hinh2" src="tap2.png" onclick="doiHinh('hinh2');">
+<img id="hinh3" src="kim3.png" onclick="doiHinh('hinh3');">
+<script>
+    function doiHinh(hinh) {
+        let objHinh1= document.getElementById("hinh1");
+        let objHinh2= document.getElementById("hinh2");
+        let objHinh3= document.getElementById("hinh3");
+        switch (hinh) {
+            case "hinh1":
+                if (objHinh1.getAttribute("src")==="trump1.png"){
+                    objHinh1.src="tap1.png";
+                }else if (objHinh1.getAttribute("src")==="tap1.png"){
+                    objHinh1.src="kim1.png";
+                }else {
+                    objHinh1.src="trump1.png";
+                }
+                setTimeout(kiemTra,1000);
+                break;
+            case "hinh2":
+                if (objHinh2.getAttribute("src")==="trump2.png"){
+                    objHinh2.src="tap2.png";
+                }else if (objHinh2.getAttribute("src")==="tap2.png"){
+                    objHinh2.src="kim2.png";
+                }else {
+                    objHinh2.src="trump2.png";
+                }
+                setTimeout(kiemTra,1000);
+                break;
+            case "hinh3":
+                if (objHinh3.getAttribute("src")==="trump3.png"){
+                    objHinh3.src="tap3.png";
+                }else if (objHinh3.getAttribute("src")==="tap3.png"){
+                    objHinh3.src="kim3.png";
+                }else {
+                    objHinh3.src="trump3.png";
+                }
+                setTimeout(kiemTra,1000);
+                break;
+
+        }
+    }
+    function kiemTra() {
+        let objHinh1= document.getElementById("hinh1");
+        let objHinh2= document.getElementById("hinh2");
+        let objHinh3= document.getElementById("hinh3");
+        let kiemTraTrump=objHinh1.getAttribute("src")==="trump1.png"&&objHinh2.getAttribute("src")==="trump2.png"&&objHinh3.getAttribute("src")==="trump3.png";
+        let kiemTraTap=objHinh1.getAttribute("src")==="tap1.png"&&objHinh2.getAttribute("src")==="tap2.png"&&objHinh3.getAttribute("src")==="tap3.png";
+        let kiemTraKim=objHinh1.getAttribute("src")==="kim1.png"&&objHinh2.getAttribute("src")==="kim2.png"&&objHinh3.getAttribute("src")==="kim3.png";
+        if (kiemTraTrump){
+            alert(" ông trump chiến thăng");
+        }else if(kiemTraTap){
+            alert("ông  tập chiến thắng");
+        }else if(kiemTraKim){
+            alert("ông kim chiến thắng");
+        }
+    }
+</script>
+</body>
+</html>

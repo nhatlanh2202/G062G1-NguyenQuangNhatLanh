@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let chuoi = prompt("Nhập chuỗi có kí tự bất kì: ");
+    let count = 0;
+    for (let i = 0; i < chuoi.length; i++) {
+        if (i==0 || chuoi[i==""]) {
+            count = count + 1;
+        }
+    }
+    document.writeln("chuỗi đã nhập: " + chuoi + "<br>" );
+    document.writeln("Chuỗi có " + count +  " từ");
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp Temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(doC){
+            this.doC = doC;
+        }
+        setdoC(doC){
+            this.doC = doC;
+        }
+        getdoF(){
+            return (this.doC * 1.8) + 32;
+        }
+        getkenVin(){
+            return this.doC + 273.15;
+        }
+    }
+    let chuyenDoi = new Temperature(20);
+    document.write( "Độ C: " +  chuyenDoi.doC + "<br>" +  "Độ F là: " + chuyenDoi.getdoF() + "<br>" + "Độ K: " + chuyenDoi.getkenVin() + "<br><br>");
+    let doC= parseInt(prompt("nhập một độ C: "));
+    chuyenDoi.setdoC(doC);
+    document.write( "Độ C: " + chuyenDoi.doC + "<br>" +  "Độ F: " + chuyenDoi.getdoF() + "<br>" + "Độ K: " + chuyenDoi.getkenVin());
+</script>
+</body>
+</html>

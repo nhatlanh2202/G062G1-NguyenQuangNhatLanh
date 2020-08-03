@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<input type="number" id="canhA">
+<input type="number" id="canhB">
+<input type="number" id="canhC">
+<input type="button" id="kiemtra" value="Kiểm tra" onclick="kiemtra();">
+</body>
+<script>
+    function kiemtra() {
+        let numA = parseFloat(document.getElementById("canhA").value);
+        let numB = parseFloat(document.getElementById("canhB").value);
+        let numC = parseFloat(document.getElementById("canhC").value);
+        if (numA > 0 && numB > 0 && numC > 0) {
+            if (numA + numB > numC && numB + numC > numA && numA + numC > numB) {
+                alert("hình có các cạnh a, b và c là một hình tam giác");
+            } else {
+                alert("hình có các cạnh a, b và c không phải là một hình tam giác");
+            }
+        }else {
+        alert("hình có các cạnh a, b và c không phải là hình tam giác");
+        }
+    }
+</script>
+</html>

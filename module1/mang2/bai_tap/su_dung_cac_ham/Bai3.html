@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let chuoiSo = prompt("nhập vào một chuỗi số: ");
+    let result = [];
+    for (let i=1; i<chuoiSo.length; i++){
+        if ((chuoiSo[i-1]%2===0)&&(chuoiSo[i]%2===0))
+        {
+        result.push("-", chuoiSo[i])
+        }
+        else result.push(chuoiSo[i])
+    }
+    document.writeln(result.join(""));
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<input id="nhapso" type="text">
+<button onclick="tangMot()">+1</button>
+<script>
+    function tangMot() {
+        let number = document.getElementById("nhapso").value;
+        number++;
+        document.getElementById("nhapso").value = number;
+    }
+</script>
+</body>
+</html>

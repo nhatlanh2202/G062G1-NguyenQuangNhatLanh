@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("nhập vào một chuỗi kì tự");
+    alert(str.split("").reverse().join(""));
+    let chuHoa = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let chuThuong = "abcdefghijklmnopqrstuvwxyz";
+    let result = [];
+    for (let i=0; i <str.length; i++){
+        if (chuHoa.indexOf(str[i])!== -1){
+            result.push(str[i].toLocaleLowerCase());
+        }
+        else if (chuThuong.indexOf(str[i])!== -1){
+            result.push(str[i].toLocaleUpperCase());
+        }
+        else {
+            result.push(str[i])
+        }
+    }
+
+    let bienTam = result.reverse().join("");
+    document.write(bienTam);
+</script>
+</body>
+</html>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Customer{
+        constructor(ten,cmnd,ngaySinh,email,diaChi,loaiKhachHang,phanGiamGia,
+                    soLuongDiKem,soNgayThue,loaiDichVu,loaiPhong) {
+            this.ten = ten;
+            this.cmnd = cmnd;
+            this.ngaySinh = ngaySinh;
+            this.email = email;
+            this.diaChi = diaChi;
+            this.loaiKhachHang = loaiKhachHang;
+            this.phanGiamGia = phanGiamGia;
+            this.soLuongDiKem = soLuongDiKem;
+            this.soNgayThue = soNgayThue;
+            this.loaiDichVu = loaiDichVu;
+            this.loaiPhong = loaiPhong;
+            this.total;
+
+        }
+        setTen(ten){
+            this.ten = ten;
+        }
+        setCmnd(cmnd){
+            this.cmnd = cmnd;
+        }
+        setNgaySinh(ngaySinh){
+            this.ngaySinh = ngaySinh;
+        }
+        setEmail(email){
+            this.email = email;
+        }
+        setDiaChi(diaChi){
+            this.diaChi = diaChi;
+        }
+        setLoaiKhachHang(loaiKhachHang){
+            this.loaiKhachHang = loaiKhachHang;
+        }
+        setPhanGiamGia(phanGiamGia){
+            this.phanGiamGia = phanGiamGia;
+        }
+        setSoLuongDiKem(soLuongDiKem){
+            this.soLuongDiKem = soLuongDiKem;
+        }
+        setSoNgayThue(soNgayThue){
+            this.soNgayThue = soNgayThue;
+        }
+        setLoaiDichVu(loaiDichVu){
+            this.loaiDichVu = loaiDichVu;
+        }
+        setLoaiPhong(loaiPhong){
+            this.loaiPhong = loaiPhong;
+        }
+        getTen(){
+            return this.ten;
+        }
+        getCmnd(){
+            return this.cmnd;
+        }
+        getNgaySinh(){
+            return this.ngaySinh;
+        }
+        getEmail(){
+            return this.email;
+        }
+        getDiaChi(){
+            return this.diaChi;
+        }
+        getLoaiKhachHang(){
+            return this.loaiKhachHang;
+        }
+        getPhanGiamGia(){
+            return this.phanGiamGia;
+        }
+        getSoLuongDiKem(){
+            return this.soLuongDiKem;
+        }
+        getSoNgayThue(){
+            return this.soNgayThue;
+        }
+        getLoaiDichVu(){
+            return this.loaiDichVu;
+        }
+        getLoaiPhong(){
+            return this.loaiPhong;
+        }
+        totalPay(){
+            if (this.loaiDichVu === 'Villa') {
+                this.total = 500 * this.soNgayThue * (1 - this.phanGiamGia / 100);
+            } else if (this.loaiDichVu === 'House') {
+                this.total = 300 * this.soNgayThue * (1 - this.phanGiamGia / 100);
+            } else if (this.loaiDichVu === 'Room') {
+                this.total = 100 * this.soNgayThue * (1 - this.phanGiamGia / 100);
+            }
+            return this.total;
+        }
+    }
+    //Employee
+    class Employee {
+        constructor(ten,cmnd,email,ngaySinh,viTri,trinhDo,soDt) {
+            this.ten = ten;
+            this.cmnd = cmnd;
+            this.email = email;
+            this.ngaySinh = ngaySinh;
+            this.viTri = viTri;
+            this.trinhDo = trinhDo;
+            this.soDt = soDt;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        setCmnd(cmnd) {
+            this.cmnd = cmnd;
+        }
+
+        setNgaySinh(ngaySinh) {
+            this.ngaySinh = ngaySinh;
+        }
+
+        setEmail(email) {
+            this.email = email;
+        }
+
+        setSoDt(soDt) {
+            this.soDt = soDt;
+        }
+
+        setTrinhDo(trinhDo) {
+            this.trinhDo = trinhDo;
+        }
+
+        setViTri(viTri) {
+            this.viTri = viTri;
+        }
+
+        setLuong(luong) {
+            this.luong = luong;
+        }
+        getTen(){
+            return this.ten;
+        }
+        getCmnd(){
+            return this.cmnd;
+        }
+        getNgaySinh(){
+            return this.ngaySinh;
+        }
+        getEmail(){
+            return this.email;
+        }
+        getSoDt() {
+            return this.soDt;
+        }
+
+        getTrinhDo() {
+            return this.trinhDo;
+        }
+
+        getViTri() {
+            return this.viTri;
+        }
+        getLuong() {
+            if (this.getViTri() === "Manager"){
+                this.luong = 500;
+            }else if (this.getViTri() === "Sale"){
+                this.luong = 300;
+            }else if(this.getViTri() === "Marketing"){
+                this.luong = 200;
+            }
+            return this.luong;
+        }
+        getInfoEmployee(){
+            return "1. Tên: " + this.ten + "\n2. Cmnd: " + this.cmnd + "\n3. Email: " + this.email + "\n4. Ngày Sinh" +
+                this.ngaySinh + "\n5. Vị trí làm việc: " + this.viTri +
+                "\n6. Trình độ: " + this.trinhDo + "\n7. Số điện thoại " + this.soDt + "\n8. Tiền lương " + this.luong;
+        }
+    }
+    let listEmployee = [];
+    let infoToEnter = ["Tên","CMND","Ngày , tháng , năm sinh","Email", "Địa chỉ", "Loại Customer", "Phần trăm giảm giá","Số lượng đi kèm",
+        "Số ngày thuê", "Loại dịch vụ","Loại phòng"];
+    let listCustomers = [];
+    let j =0;
+    let numberOder;
+    let info;
+    displayMainMenu();
+
+
+
+
+    function displayMainMenu() {
+        let choose = prompt("Nhập thao tác muốn thực hiện:\n 1. Add New Customer\n 2. Display Information Customer" +
+            "\n 3. Edit Information Customer\n 4. Delete Customer\n 5. Display TotalPay\n 6. Menu Employee \n 7. Exit");
+        switch (choose) {
+            case "1":
+                let customer = new Customer();
+                addNewCustomer(customer);
+                displayMainMenu();
+                break;
+            case "2":
+                alert(displayCustomer());
+                displayMainMenu();
+                break;
+            case "3":
+                editInformationCustomer();
+                displayMainMenu();
+                break;
+            case "4":
+                deleteCustomer();
+                displayMainMenu();
+                break;
+            case "5":
+                displayTotalPay();
+                displayMainMenu();
+                break;
+            case "6":
+                menuEmployee();
+                displayMainMenu();
+                break;
+            case "7":
+                break;
+            default:
+                alert("Failed");
+                displayMainMenu();
+        }
+    }
+
+
+
+    function addNewCustomer(customer) {
+        listCustomers[j] = new Array();
+        let checkStatus = false;
+        customer.setTen(prompt("1.Nhập tên khách hàng: "));
+        listCustomers[j].push(customer.getTen());
+
+
+        let cmnd;
+        do {
+            checkStatus=true;
+            cmnd = parseInt(prompt("2.Nhập CMND của khách hàng: "));
+            if (/^[\d]{8}$/.test(cmnd)){
+                checkStatus = false;
+            }else {
+                alert("cmnd không đúng định dạng");
+            }
+        }while (checkStatus);
+        customer.setCmnd(cmnd);
+        listCustomers[j].push(customer.getCmnd());
+
+
+        let birthday;
+        do{
+            checkStatus=true;
+            birthday = prompt("3. Nhập ngày sinh của khách hàng: " + "\n DD/MM/YYYY");
+            let regex =/([0][1-9]|[1-2][0-9]|[3][0-1])\/([0][1-9]|[1][0-2])\/([1-2][\d]{3})/;
+            if (regex.test(birthday)){
+                checkStatus = false;
+            }else {
+                alert("Ngày sinh không đúng định dạng");
+            }
+        }while (checkStatus);
+        customer.setNgaySinh(birthday);
+        listCustomers[j].push(customer.getNgaySinh());
+
+
+        let email;
+        do {
+            checkStatus=true;
+            email = prompt("4. Nhập email của khách hàng: ");
+            let regex = /[\w]+@[a-z]+\.[a-z]+/;
+            if (regex.test(email)){
+                checkStatus = false;
+            }else {
+                alert("Email nhập không đúng định dạng");
+            }
+        }while (checkStatus);
+        customer.setEmail(email);
+        listCustomers[j].push(customer.getEmail());
+
+
+        customer.setDiaChi(prompt("5. Nhập địa chỉ đang sống: " + "\n Tên Thành Phố"));
+        listCustomers[j].push(customer.getDiaChi());
+
+
+        let loaiKhachHang;
+        loaiKhachHang = parseInt(prompt("Chọn Loại khách hàng: " + "\n1.Diamond" + "\n2.Platium"
+            +"\n3.Gold" + "\n4.Silver" + "\n5.Member"));
+        let khachHang;
+        switch (loaiKhachHang) {
+            case 1:
+                khachHang = "Diamond";
+                break;
+            case 2:
+                khachHang = "Platium";
+                break;
+            case 3:
+                khachHang = "Gold";
+                break;
+            case 4:
+                khachHang = "Silver";
+                break;
+            case 5:
+                khachHang = "Member";
+                break;
+            default:
+                alert("Lựa chọn của bạn không tồn tại");
+        }
+        customer.setLoaiKhachHang(khachHang);
+        listCustomers[j].push(customer.getLoaiKhachHang());
+
+
+        let discount = 0;
+        do {
+            checkStatus = true;
+            discount = prompt("7. Phần trăm giảm giá: " + "\n%");
+            if (discount > 0 && discount < 100 && !isNaN(discount)){
+                checkStatus = false;
+            }else {
+                alert("Giá trị không hợp lệ");
+            }
+        }while (checkStatus);
+        customer.setPhanGiamGia(discount);
+        listCustomers[j].push(customer.getPhanGiamGia());
+
+        customer.setSoLuongDiKem(prompt("8. Số lượng đi kèm: "));
+        listCustomers[j].push(customer.getSoLuongDiKem());
+
+        let rentDays = 0;
+        do {
+            checkStatus = true;
+            rentDays = prompt("9. Số ngày thuê: ");
+            if (rentDays > 0 && rentDays < 365 && !isNaN(rentDays)){
+                checkStatus = false;
+            }else {
+                alert("Số ngày không hợp lệ");
+            }
+        }while (checkStatus);
+        customer.setSoNgayThue(rentDays);
+        listCustomers[j].push(customer.getSoNgayThue());
+
+
+        let chonDichVu;
+        chonDichVu = parseInt(prompt("10.Chọn Dịch Vụ: " + "\n1.Villa "+"\n2.House"+"\n3.Room"));
+        let dichVu;
+        switch (chonDichVu) {
+            case 1:
+                dichVu = "Villa";
+                break;
+            case 2:
+                dichVu = "House";
+                break;
+            case 3:
+                dichVu = "Room";
+                break;
+            default:
+                alert("dịch vụ bạn chọn không tồn tại");
+        }
+        customer.setLoaiDichVu(dichVu);
+        listCustomers[j].push(customer.getLoaiDichVu());
+
+
+        let chonLoaiPhong;
+        chonLoaiPhong = parseInt(prompt("11.Chọn Loại Phòng: " + "\n1.Vip" +"\n2.Business"+"\n3.Normal"));
+        let loaiPhong;
+        switch (chonLoaiPhong) {
+            case 1:
+                loaiPhong = "Vip";
+                break;
+            case 2:
+                loaiPhong = "Business";
+                break;
+            case 3:
+                loaiPhong = "Normal";
+                break;
+            default:
+                alert("Loại phòng bạn chọn không tồn tại");
+        }
+        customer.setLoaiPhong(loaiPhong);
+        listCustomers[j].push(customer.getLoaiPhong());
+
+        listCustomers[j].push(customer);
+        alert(displayInformation(j));
+        j++;
+    }
+
+
+
+    function displayInformation(j) {
+        info = "";
+        for (let i=0; i < infoToEnter.length ; i++){
+            info += (i+1) + ' . ' + infoToEnter[i] + " : " + listCustomers[j][i] + '\n';
+        }
+        return info;
+    }
+
+
+
+    function disName() {
+        let editName = "";
+        numberOder = 1;
+        editName += numberOder + '. ';
+        editName += listCustomers[0][0]  + '\n';
+        numberOder++;
+        return editName;
+    }
+
+
+
+    function displayCustomer() {
+        let choose = parseInt(prompt(disName() + numberOder + '. Back'));
+        if (choose <=0 || isNaN(choose) || choose > numberOder){
+            alert("Lựa chọn của bạn không tồn tại !");
+            return  displayCustomer();
+        }
+        else if (choose === numberOder) {
+            return displayMainMenu();
+        }
+        else {
+            customer = choose;
+            return displayInformation(customer-1);
+        }
+    }
+
+
+    function displayTotalPay() {
+        let choose = parseInt(prompt(disName() + numberOder + '. Back'));
+        if (choose <=0 || isNaN(choose) || choose > numberOder){
+            return  displayCustomer();
+        }
+        else if (choose === numberOder) {
+            return displayMainMenu();
+        }
+        else return alert("Tổng tiền quí khách phải trả là : " +
+                listCustomers[choose-1][listCustomers[choose-1].length-1].totalPay() + " $ .")
+    }
+
+
+
+
+    function editInformationCustomer() {
+        let choose = parseInt(prompt(displayCustomer() + (infoToEnter.length + 1) + '. Back'));
+        if (choose <= 0 || choose > (infoToEnter+2) || isNaN(choose)){
+            alert("Lựa chọn của bạn không tồn tại !");
+            editInformationCustomer();
+        }
+        else if ( choose === (infoToEnter.length + 1)){
+            editInformationCustomer();
+        }
+        else {
+            let edit = prompt("Nhập " + infoToEnter[choose - 1] + ' muốn thay đổi :');
+            listCustomers[customer - 1][choose - 1] = edit;
+            alert(displayInformation(customer-1));
+        }
+    }
+
+
+
+    function deleteCustomer () {
+        let choose = parseInt(prompt(disName() + numberOder + " . Back"));
+        if (choose <=0 || isNaN(choose) || choose > numberOder){
+            alert("Lựa chọn của bạn không tồn tại !");
+            deleteCustomer();
+        }
+        else if (choose === numberOder) {
+            displayMainMenu();
+        }
+        else {
+            customer = choose;
+            let confirm = prompt("Bạn có thực sự muốn xóa Customer này hay không ?" + "\n" + "1. Yes" + "\n" + "2. No");
+            switch (confirm) {
+                case "1":
+                    listCustomers.splice((choose-1),1);
+                    break;
+                case "2":
+                    break;
+                default :
+                    deleteCustomer();
+            }
+        }
+    }
+
+
+
+    menuEmployee();
+    function menuEmployee() {
+
+        let choose = prompt("Nhập thao tác muốn thực hiện với Employee: \n 1. Add New Employee\n " +
+            "2. Display Information Employee \n 3. Room Charge \n 4. Back ");
+        switch (choose) {
+            case "1":
+                addNewEmployee();
+                menuEmployee();
+                break;
+            case "2":
+                displayInformationEmployee();
+                menuEmployee();
+                break;
+            case "3":
+                roomCharge();
+                menuEmployee();
+                break;
+            case "4":
+                displayMainMenu();
+                break;
+            default:
+                alert("");
+                menuEmployee();
+                break;
+        }
+    }
+    function addNewEmployee() {
+        //Tên
+        let ten = prompt("1.Nhập tên nhân viên: ");
+        //CMND
+        let cmnd;
+        do {
+            cmnd = parseInt(prompt("2.Nhập CMND: "));
+            if (/^[\d]{8}$/.test(cmnd)){
+                break;
+            }else {
+                alert("CMND không đúng định dạng");
+            }
+        }while (1);
+        //Email
+        let email;
+        do {
+            email = prompt("4.Nhập Email của nhân viên: ");
+            let regex = /[\w]+@[a-z]+\.[a-z]+/;
+            if (regex.test(email)){
+                break;
+            }else {
+                alert("Email không đúng định dạng");
+            }
+        }while (1);
+        //Ngày Sinh
+        let ngaySinh;
+        do {
+            ngaySinh = prompt("3.Nhập ngày sinh nhân viên: " + "\nĐịnh dạng DD/MM/YYYY");
+            let regex =/([0][1-9]|[1-2][0-9]|[3][0-1])\/([0][1-9]|[1][0-2])\/([1-2][\d]{3})/;
+            if (regex.test(ngaySinh)){
+                break;
+            }else {
+                alert("Nhập ngày sinh không đúng định dạng ");
+            }
+        }while (1);
+        //Vị trí
+        let viTri;
+        let checkViTri = true;
+        do {
+            let chonViTri = prompt("Nhập vị trí làm việc của nhân viên: \n1. Manager \n2. Sale \n3. Marketing");
+            switch (chonViTri) {
+                case "1":
+                    viTri = "Manager";
+                    break;
+                case "2":
+                    viTri = "Sale";
+                    break;
+                case "3":
+                    viTri = "Marketing";
+                    break;
+                default:
+                    alert("Vị trí làm việc của bạn không có!");
+                    checkViTri = false
+            }
+        }while (!checkViTri);
+        //Trình độ
+        let trinhDo;
+        let checkTrinhDo = true;
+        do {
+            let chooseLevel = prompt("Nhập trình độ của bạn : \n1. Trung Cấp \n2. Cao đẳng \n3. Đại học \n4. Sau Đại học ");
+            switch (chooseLevel) {
+                case "1":
+                    trinhDo = "Trung cấp";
+                    break;
+                case "2":
+                    trinhDo = "Cao đẳng";
+                    break;
+                case "3":
+                    trinhDo = "Đại học";
+                    break;
+                case "4":
+                    trinhDo = "Sau Đại học";
+                    break;
+                default :
+                    alert("Trình độ bạn chọn không có !");
+                    checkTrinhDo = false;
+            }
+        }while (!checkTrinhDo);
+        //Số điện thoại
+        let soDt;
+        do {
+            soDt = prompt("5.Nhập số điện thoại: ");
+            let regex =  /^[\d]{10}$/;
+            if (regex.test(soDt)){
+                break;
+            }else {
+                alert("Số điện thoại không đúng định dạng");
+            }
+        }while (1);
+        let objectEmloyee = new Employee(ten,cmnd,email,ngaySinh,viTri,trinhDo,soDt);
+        let salary = objectEmloyee.getLuong();
+        listEmployee.push(objectEmloyee);
+        menuEmployee();
+    }
+
+    function   displayInformationEmployee() {
+        let chooseDisplay = prompt("Lựa chọn của bạn: \n 1.Infomation Employee" + "\n 2.Back Menu");
+        switch (chooseDisplay) {
+            case "1":
+                let temp = "";
+                for (let i=0; i<listEmployee.length; i++){
+                    temp += i + ".Name: " + listEmployee[i].getTen() + "\n" +
+                        " Vị trí làm việc: " +  listEmployee[i].getViTri() + "\n"
+                }
+                let choose1 = parseInt(prompt(temp));
+                alert(listEmployee[choose1].getInfoEmployee());
+                break;
+            case "2":
+                menuEmployee();
+                break;
+        }
+    }
+    function roomCharge() {
+        let temp = "";
+        for (let i=0; i<listEmployee.length; i++){
+            temp += i + ".Name: " + listEmployee[i].getTen() + "\n" +
+                " Vị trí làm việc: " +  listEmployee[i].getViTri() + "\n"
+        }
+        let choose1 = parseInt(prompt(temp));
+        alert(listEmployee[choose1].getInfoEmployee());
+        displayTotalPay();
+    }
+</script>
+</body>
+</html>

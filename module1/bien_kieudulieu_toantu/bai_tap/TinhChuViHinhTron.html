@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập</title>
+</head>
+<body>
+<form method="post">
+    <h2>Tính Chu Vi Hình Tròn</h2>
+    <label>D<input type="text" id="duongkinh" value=""></label><br>
+    <input type="button" onclick="tinhchuvi()" value="=>"><br>
+    <label>C<input type="text" id="chuvi" value=""></label>
+</form>
+<script>
+    function tinhchuvi() {
+        let D = parseInt(document.getElementById("duongkinh").value);
+        let C = ( D * 3.14 );
+        document.getElementById("chuvi").value = C;
+    }
+</script>
+</body>
+</html>

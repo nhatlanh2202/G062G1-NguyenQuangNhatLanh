@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<script>
+    let a,b;
+    function UCLN(a,b) {
+        while (a!==b){
+            if (a>b) a=a-b;
+            else b=b-a;
+        }
+        return a;
+    }
+    a = parseInt(prompt("nhập vào giá trị a"));
+    b = parseInt(prompt("nhập vào giá trị b"));
+    document.write("Ước chung lớn nhất: " + UCLN(a,b));
+    document.write(" Bội chung nhỏ nhất: " + a*b/UCLN(a,b));
+</script>
+</body>
+</html>

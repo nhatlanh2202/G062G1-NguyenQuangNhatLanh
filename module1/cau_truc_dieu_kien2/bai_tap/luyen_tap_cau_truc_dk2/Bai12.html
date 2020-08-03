@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+<label>Tiền Gốc<input type="number" id="tiengoc"></label>
+<label>Tiền lãi<input type="number" id="laisuat"></label>
+<label>Tháng vay<input type="number" id="thangvay"></label>
+<input type="button" id="kiemtra" value="Kiểm tra" onclick="kiemTra();">
+<br>
+<p>Đơn vị Triệu VNĐ</p>
+<script>
+    function kiemTra() {
+        let i =1;
+        let tienGoc = parseFloat(document.getElementById("tiengoc") .value);
+        let soLai = parseFloat(document.getElementById("laisuat") .value);
+        let soThang = parseFloat(document.getElementById("thangvay") .value);
+        let tongTien = tienGoc/soLai * soThang;
+        if (soThang==1){
+            alert("Số tiền phải trả ngân hàng là: " + tongTien);
+        }
+        else {
+            do {
+                tongTien = tongTien*soLai/100+tongTien;
+                i++;
+                console.log("i= "+i);
+                console.log("Tổng tiền: " +tongTien);
+            } while (i<soThang);
+            alert("Số tiền trả  ngân hàng là: " + tongTien);
+        }
+    }
+</script>
+</body>
+</html>
