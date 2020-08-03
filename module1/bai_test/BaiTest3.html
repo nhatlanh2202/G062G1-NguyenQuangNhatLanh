@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test 3</title>
+</head>
+<body>
+<script>
+    let arrScore = [9,5,2,3,9,6,8];
+    let arrScore2 = [4,7,6,9,2,7];
+    findMaxScore(arrScore);
+    findMaxScore(arrScore2);
+    function findMaxScore(array) {
+        let arrayLength = array.length;
+        let max = array[0];
+        for (let i=0; i<arrayLength; i++){
+            if (array[i]>max)
+                max = array[i]
+        }
+        let index = array.indexOf(max);
+        document.write("Điểm số cao nhất trong mảng điểm trên là: " + max +
+                    "<br>" + "Vị trí của " + max + " trong mảng là: " + index + "<br><br>");
+    }
+</script>
+</body>
+</html>

@@ -100,7 +100,7 @@
             return this.total;
         }
     }
-//Employee
+    //Employee
     class Employee {
         constructor(ten,cmnd,email,ngaySinh,viTri,trinhDo,soDt) {
             this.ten = ten;
@@ -436,7 +436,7 @@
         else if (choose === numberOder) {
             return displayMainMenu();
         }
-        else return alert("Tổng tiền phải trả là : " +
+        else return alert("Tổng tiền quí khách phải trả là : " +
                 listCustomers[choose-1][listCustomers[choose-1].length-1].totalPay() + " $ .")
     }
 
@@ -625,6 +625,16 @@
                 menuEmployee();
                 break;
         }
+    }
+    function roomCharge() {
+        let temp = "";
+        for (let i=0; i<listEmployee.length; i++){
+            temp += i + ".Name: " + listEmployee[i].getTen() + "\n" +
+                " Vị trí làm việc: " +  listEmployee[i].getViTri() + "\n"
+        }
+        let choose1 = parseInt(prompt(temp));
+        alert(listEmployee[choose1].getInfoEmployee());
+        displayTotalPay();
     }
 </script>
 </body>

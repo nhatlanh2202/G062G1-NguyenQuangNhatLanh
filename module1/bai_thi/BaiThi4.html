@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Thi 4</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border: 1px solid #d3d3d3"></canvas>
+<script>
+
+    class Circle{
+        constructor(x,y,radius,color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+        }
+        setX(x){
+            this.x = x;
+        }
+        setY(y){
+            this.y = y;
+        }
+        setRadius(radius){
+            this.radius = radius;
+        }
+        setColor(color){
+            this.color = color;
+        }
+        getX(){
+            return this.x;
+        }
+        getY(){
+            return this.y;
+        }
+        getRadius(){
+            return this.radius;
+        }
+        getColor(){
+            return this.color;
+        }
+        render(){
+            let canvas = document.getElementById("myCanvas").getContext("2d");
+            canvas.beginPath();
+            canvas.fillStyle = this.color;
+            canvas.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            canvas.fill();
+        }
+    }
+    let newCircle = new Circle(10,10,100,"#000000");
+    newCircle.render();
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test 2</title>
+</head>
+<body>
+<script>
+    function timSoChinhPhuong(nhapSo) {
+        if(Math.sqrt(nhapSo) % 1 == 0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    let nhapSo = prompt("nhập số bất kỳ: ");
+    if (timSoChinhPhuong(nhapSo))
+        document.write(nhapSo + " là số chính phương");
+    else
+        document.write(nhapSo + " không phải là số chính phương");
+
+</script>
+</body>
+</html>

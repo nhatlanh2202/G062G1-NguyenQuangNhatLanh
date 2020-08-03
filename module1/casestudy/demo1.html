@@ -100,7 +100,7 @@
             return this.total;
         }
     }
-//Employee
+    //Employee
     class Employee {
         constructor(ten,cmnd,email,ngaySinh,viTri,trinhDo,soDt) {
             this.ten = ten;
@@ -221,13 +221,11 @@
                 break;
             case "6":
                 menuEmployee();
-                displayMainMenu();
                 break;
             case "7":
                 break;
             default:
                 alert("Failed");
-                displayMainMenu();
         }
     }
 
@@ -429,15 +427,20 @@
 
 
     function displayTotalPay() {
-        let choose = parseInt(prompt(disName() + numberOder + '. Back'));
-        if (choose <=0 || isNaN(choose) || choose > numberOder){
-            return  displayCustomer();
+        if (j<=0){
+            alert("chưa có khách hàng để tính tiền.");
+            displayMainMenu();
+        }else {
+            let choose = parseInt(prompt(disName() + numberOder + '. Back'));
+            if (choose <=0 || isNaN(choose) || choose > numberOder){
+                return  displayCustomer();
+            }
+            else if (choose === numberOder) {
+                return displayMainMenu();
+            }
+            else return alert("Tổng tiền quí khách phải trả là : " +
+                    listCustomers[choose-1][listCustomers[choose-1].length-1].totalPay() + " $ .");
         }
-        else if (choose === numberOder) {
-            return displayMainMenu();
-        }
-        else return alert("Tổng tiền phải trả là : " +
-                listCustomers[choose-1][listCustomers[choose-1].length-1].totalPay() + " $ .")
     }
 
 
@@ -487,7 +490,6 @@
 
 
 
-    menuEmployee();
     function menuEmployee() {
 
         let choose = prompt("Nhập thao tác muốn thực hiện với Employee: \n 1. Add New Employee\n " +
@@ -507,10 +509,6 @@
                 break;
             case "4":
                 displayMainMenu();
-                break;
-            default:
-                alert("");
-                menuEmployee();
                 break;
         }
     }
@@ -625,6 +623,22 @@
                 menuEmployee();
                 break;
         }
+    }
+    function roomCharge() {
+        if (j<=0){
+            alert("chưa có thông tin khách hàng để tính tiền");
+            displayMainMenu();
+        }else {
+            let temp = "";
+            for (let i=0; i<listEmployee.length; i++){
+                temp += i + ".Name: " + listEmployee[i].getTen() + "\n" +
+                    " Vị trí làm việc: " +  listEmployee[i].getViTri() + "\n"
+            }
+            let choose1 = parseInt(prompt(temp));
+            alert(listEmployee[choose1].getInfoEmployee());
+            displayTotalPay();
+        }
+
     }
 </script>
 </body>

@@ -20,10 +20,10 @@
             switch (choose) {
                 case "1":
                     addNewCustomer();
+                    displayMainMenu();
                     break;
                 case "2":
                     alert(displayCustomer());
-                    displayMainMenu();
                     break;
                 case "3":
                     editInformationCustomer();
@@ -48,6 +48,9 @@
             j++;
             displayMainMenu();
         }
+
+
+
         function displayInformation(j) {
             info = "";
             for (let i=0; i < infoToEnter.length ; i++){
@@ -55,24 +58,23 @@
             }
             return info;
         }
-        function nameAndCMND() {
-            let nameVaCMND = "";
+
+
+
+        function disName() {
+            let editName = "";
             numberOder = 1;
-            for (let phanTu=0;phanTu<listCustomers.length;phanTu++){
-                nameVaCMND += numberOder + '. ';
-                for (let i=0;i<2;i++){
-                    if (infoToEnter[i] === 'Tên') {
-                        nameVaCMND += listCustomers[phanTu][i]  + '\n';
-                        continue;
-                    }
-                    nameVaCMND += "  " + listCustomers[phanTu][i] + '\n';
-                }
+                editName += numberOder + '. ';
+                        editName += listCustomers[0][0]  + '\n';
                 numberOder++;
-            }
-            return nameVaCMND;
+            return editName;
         }
+
+
+
+
         function displayCustomer() {
-            let choose = parseInt(prompt(nameAndCMND() + numberOder + '. Back'));
+            let choose = parseInt(prompt(disName() + numberOder + '. Back'));
             if (choose <=0 || isNaN(choose) || choose > numberOder){
                 alert("Lựa chọn của bạn không tồn tại !");
                 return  displayCustomer();
@@ -102,7 +104,7 @@
             displayMainMenu();
         }
         function deleteCustomer () {
-            let choose = parseInt(prompt(nameAndCMND() + numberOder + " . Back"));
+            let choose = parseInt(prompt(disName() + numberOder + " . Back"));
             if (choose <=0 || isNaN(choose) || choose > numberOder){
                 alert("Lựa chọn của bạn không tồn tại !");
                 deleteCustomer();
