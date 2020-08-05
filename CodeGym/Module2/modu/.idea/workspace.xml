@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d61b45a2-5f51-4b22-a88e-6d22a19d51ca" name="Default Changelist" comment="" />
+    <list default="true" id="d61b45a2-5f51-4b22-a88e-6d22a19d51ca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IntroductiontoJava/bai_tap/demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +18,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
   <component name="ProjectId" id="1faEQOijjU2mgNB0Y7j5BzNwyE8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,8 +30,30 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="HienThiSoNguyenToNho100" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="VongLapJava.bai_tap.HienThiSoNguyenToNho100" />
+      <module name="modu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="VongLapJava.bai_tap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HienThiSoNguyenToNho100" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -36,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596447791558</updated>
       <workItem from="1596447801481" duration="838000" />
+      <workItem from="1596593851528" duration="577000" />
     </task>
     <servers />
   </component>
@@ -43,9 +74,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="409" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1596447865660">
+    <state width="1260" height="187" key="GridCell.Tab.0.bottom" timestamp="1596594471952">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state x="409" y="206" key="com.intellij.ide.util.TipDialog/62.0.1304.768@62.0.1304.768" timestamp="1596447865660" />
+    <state width="1260" height="187" key="GridCell.Tab.0.bottom/62.0.1304.768@62.0.1304.768" timestamp="1596594471952" />
+    <state width="1260" height="187" key="GridCell.Tab.0.center" timestamp="1596594471951">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state width="1260" height="187" key="GridCell.Tab.0.center/62.0.1304.768@62.0.1304.768" timestamp="1596594471951" />
+    <state width="1260" height="187" key="GridCell.Tab.0.left" timestamp="1596594471950">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state width="1260" height="187" key="GridCell.Tab.0.left/62.0.1304.768@62.0.1304.768" timestamp="1596594471950" />
+    <state width="1260" height="187" key="GridCell.Tab.0.right" timestamp="1596594471951">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state width="1260" height="187" key="GridCell.Tab.0.right/62.0.1304.768@62.0.1304.768" timestamp="1596594471951" />
+    <state x="409" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1596593852413">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state x="409" y="206" key="com.intellij.ide.util.TipDialog/62.0.1304.768@62.0.1304.768" timestamp="1596593852413" />
   </component>
 </project>
