@@ -5,8 +5,8 @@ import AbstractClassVaInterface.thuc_hanh.InterfaceEdible.Animal.Tiger;
 import AbstractClassVaInterface.thuc_hanh.InterfaceEdible.Animal.Chicken;
 import AbstractClassVaInterface.thuc_hanh.InterfaceEdible.Edible.Edible;
 import AbstractClassVaInterface.thuc_hanh.InterfaceEdible.Fruit.Fruit;
-import AbstractClassVaInterface.thuc_hanh.InterfaceEdible.Fruit.Orange;
 import AbstractClassVaInterface.thuc_hanh.InterfaceEdible.Fruit.Apple;
+import AbstractClassVaInterface.thuc_hanh.InterfaceEdible.Fruit.Orange;
 
 public class AbstractAndInterfaceTests {
     public static void main(String[] args) {
