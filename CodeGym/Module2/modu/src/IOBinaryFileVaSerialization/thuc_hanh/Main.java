@@ -30,11 +30,12 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter source file: ");
-      //source D:\C062G1-Nguyen_Quang_Nhat_Lanh\CodeGym\Module2\modu\src\IOBinaryFileVaSerialization\thuc_hanh\source
+        // "D:\\C062G1-NguyenQuangNhatLanh\\src\\IOBinaryFileVaSerialization\\thuc_hanh\\source"
         String sourcePath = in.nextLine();
 
         System.out.println("Enter destination file: ");
-        //dest D:\C062G1-Nguyen_Quang_Nhat_Lanh\CodeGym\Module2\modu\src\IOBinaryFileVaSerialization\thuc_hanh\dest
+        // "D:\\C062G1-NguyenQuangNhatLanh\\src\\IOBinaryFileVaSerialization\\thuc_hanh\\dest"
+
         String desPath = in.nextLine();
 
 

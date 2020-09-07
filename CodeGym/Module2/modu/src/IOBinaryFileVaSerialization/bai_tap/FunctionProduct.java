@@ -1,11 +1,11 @@
-package IOBinaryFileVaSerialization.bai_tap.QuanLySanPham;
+package IOBinaryFileVaSerialization.bai_tap;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FunctionProduct extends Product{
-    ArrayList<IOBinaryFileVaSerialization.bai_tap.QuanLySanPham.Product> containsObject = new ArrayList<>();
+    ArrayList<Product> containsObject = new ArrayList<>();
 
     public void creatObject() {
         Product product1 = addProduct();

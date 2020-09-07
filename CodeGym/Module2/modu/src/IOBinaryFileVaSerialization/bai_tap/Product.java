@@ -1,4 +1,4 @@
-package IOBinaryFileVaSerialization.bai_tap.QuanLySanPham;
+package IOBinaryFileVaSerialization.bai_tap;
 
 import java.io.Serializable;
 

@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d61b45a2-5f51-4b22-a88e-6d22a19d51ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/bai_tap/QuanLySanPham/file" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/thuc_hanh/dest" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/thuc_hanh/source" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IOTextFile/bai_tap/CopyFileText/file1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IOTextFile/bai_tap/CopyFileText/file2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IOTextFile/bai_tap/DocFileCSV/ReaderCSV" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IOTextFile/thuc_hanh/demo.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/bai_tap/file" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/modu/IOBinaryFileVaSerialization/bai_tap/QuanLySanPham/FunctionProduct.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/modu/IOBinaryFileVaSerialization/bai_tap/QuanLySanPham/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/modu/IOBinaryFileVaSerialization/bai_tap/QuanLySanPham/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/modu/IOBinaryFileVaSerialization/bai_tap/QuanLySanPham/file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/modu/IOBinaryFileVaSerialization/thuc_hanh/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/modu/IOBinaryFileVaSerialization/thuc_hanh/dest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/modu/IOBinaryFileVaSerialization/thuc_hanh/source" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/bai_tap/QuanLySanPham/FunctionProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/bai_tap/QuanLySanPham/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/bai_tap/QuanLySanPham/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/bai_tap/QuanLySanPham/file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/thuc_hanh/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/thuc_hanh/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/thuc_hanh/dest" beforeDir="false" afterPath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/thuc_hanh/dest" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/thuc_hanh/source" beforeDir="false" afterPath="$PROJECT_DIR$/src/IOBinaryFileVaSerialization/thuc_hanh/source" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Kotlin File" />
+        <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -59,7 +68,7 @@
       <recent name="D:\C062G1-Nguyen_Quang_Nhat_Lanh\CodeGym\Module2\modu\src\IOBinaryFileVaSerialization\bai_tap\QuanLySanPham" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ReaderCSV">
+  <component name="RunManager" selected="Application.Main (3)">
     <configuration name="CopyFileText" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="IOTextFile.bai_tap.CopyFileText.CopyFileText" />
       <module name="modu" />
@@ -99,12 +108,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="JavaCollectionFramework.bai_tap.SuDungArrayListLinkedList.Main" />
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="IOBinaryFileVaSerialization.bai_tap.Main" />
       <module name="modu" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="JavaCollectionFramework.bai_tap.SuDungArrayListLinkedList.*" />
+          <option name="PATTERN" value="IOBinaryFileVaSerialization.bai_tap.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.ReaderCSV" />
         <item itemvalue="Application.CopyFileText" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +157,10 @@
       <workItem from="1596447801481" duration="838000" />
       <workItem from="1596593851528" duration="993000" />
       <workItem from="1597652863225" duration="10023000" />
-      <workItem from="1356975783962" duration="2517000" />
+      <workItem from="1356975783962" duration="3039000" />
+      <workItem from="1599460613649" duration="1415000" />
+      <workItem from="1599462454653" duration="1880000" />
+      <workItem from="1599464495220" duration="209000" />
     </task>
     <servers />
   </component>
@@ -168,30 +180,34 @@
       <screen x="62" y="0" width="1304" height="768" />
     </state>
     <state x="444" y="130" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/62.0.1304.768@62.0.1304.768" timestamp="1597654825798" />
-    <state width="1260" height="187" key="GridCell.Tab.0.bottom" timestamp="1598522552770">
+    <state width="1260" height="187" key="GridCell.Tab.0.bottom" timestamp="1599463386138">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1260" height="187" key="GridCell.Tab.0.bottom/62.0.1304.768@62.0.1304.768" timestamp="1598522552770" />
-    <state width="1260" height="187" key="GridCell.Tab.0.center" timestamp="1598522552770">
+    <state width="1260" height="187" key="GridCell.Tab.0.bottom/62.0.1304.768@62.0.1304.768" timestamp="1599463386138" />
+    <state width="1260" height="187" key="GridCell.Tab.0.center" timestamp="1599463386138">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1260" height="187" key="GridCell.Tab.0.center/62.0.1304.768@62.0.1304.768" timestamp="1598522552770" />
-    <state width="1260" height="187" key="GridCell.Tab.0.left" timestamp="1598522552770">
+    <state width="1260" height="187" key="GridCell.Tab.0.center/62.0.1304.768@62.0.1304.768" timestamp="1599463386138" />
+    <state width="1260" height="187" key="GridCell.Tab.0.left" timestamp="1599463386137">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1260" height="187" key="GridCell.Tab.0.left/62.0.1304.768@62.0.1304.768" timestamp="1598522552770" />
-    <state width="1260" height="187" key="GridCell.Tab.0.right" timestamp="1598522552770">
+    <state width="1260" height="187" key="GridCell.Tab.0.left/62.0.1304.768@62.0.1304.768" timestamp="1599463386137" />
+    <state width="1260" height="187" key="GridCell.Tab.0.right" timestamp="1599463386138">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state width="1260" height="187" key="GridCell.Tab.0.right/62.0.1304.768@62.0.1304.768" timestamp="1598522552770" />
-    <state x="409" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1356975909781">
+    <state width="1260" height="187" key="GridCell.Tab.0.right/62.0.1304.768@62.0.1304.768" timestamp="1599463386138" />
+    <state x="409" y="206" key="com.intellij.ide.util.TipDialog" timestamp="1599464495236">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
-    <state x="409" y="206" key="com.intellij.ide.util.TipDialog/62.0.1304.768@62.0.1304.768" timestamp="1356975909781" />
+    <state x="409" y="206" key="com.intellij.ide.util.TipDialog/62.0.1304.768@62.0.1304.768" timestamp="1599464495236" />
     <state x="418" y="276" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1597655580224">
       <screen x="62" y="0" width="1304" height="768" />
     </state>
     <state x="418" y="276" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/62.0.1304.768@62.0.1304.768" timestamp="1597655580224" />
+    <state x="0" y="0" width="606" height="768" key="find.popup" timestamp="1599463435900">
+      <screen x="62" y="0" width="1304" height="768" />
+    </state>
+    <state x="0" y="0" width="606" height="768" key="find.popup/62.0.1304.768@62.0.1304.768" timestamp="1599463435900" />
     <state x="370" y="167" key="run.anything.popup" timestamp="1598521673952">
       <screen x="62" y="0" width="1304" height="768" />
     </state>

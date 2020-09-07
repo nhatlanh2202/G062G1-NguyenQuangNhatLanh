@@ -1,4 +1,4 @@
-package IOBinaryFileVaSerialization.bai_tap.QuanLySanPham;
+package IOBinaryFileVaSerialization.bai_tap;
 
 
 public class Main {
@@ -7,7 +7,7 @@ public class Main {
 
             functionProduct.creatObject();
 
-            String path = "D:\\C062G1-Nguyen_Quang_Nhat_Lanh\\CodeGym\\Module2\\modu\\src\\IOBinaryFileVaSerialization\\bai_tap\\QuanLySanPham\\file";
+            String path = "D:\\C062G1-Nguyen_Quang_Nhat_Lanh\\CodeGym\\Module2\\modu\\src\\IOBinaryFileVaSerialization\\bai_tap\\file";
             functionProduct.writeToFile(functionProduct.containsObject, path);
 
             functionProduct.readFromFile(path);
