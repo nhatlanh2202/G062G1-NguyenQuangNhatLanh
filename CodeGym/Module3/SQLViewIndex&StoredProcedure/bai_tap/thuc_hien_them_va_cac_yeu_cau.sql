@@ -62,10 +62,22 @@ create procedure add_product(id int, product_code varchar(50), product_name varc
 							product_amount varchar(50), product_description varchar(50), product_status varchar(50))
 begin
 	insert into products
-    values (5,'dn05','honda','1000','10','normal','available');
+    values (id, product_code, product_name, product_price, product_amount, product_description, product_status);
+end//
+delimiter ;
+call add_product(5,'dn05','honda','1000','10','normal','available');
+
+
+-- Tạo store procedure xóa sản phẩm theo id.
+delimiter //
+create procedure delete_product(id_delete int)
+begin
+	delete from products
+    where id = id_delete;
 end//
 delimiter ;
 
+call delete_product(5);
 
 
 
