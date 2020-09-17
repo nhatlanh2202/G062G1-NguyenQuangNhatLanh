@@ -21,12 +21,6 @@ create table TypeBook(
 -- bảng thẻ thuê sách
 create table LibaryBook(
 	id_libary int primary key,
-    name_libary_student varchar(50),
-    birth_day_student_libary varchar(50),
-    address_student_libary varchar(50),
-    email_student_libary varchar(50),
-    phone_stundent_libary varchar(10),
-    image_student_libary varchar(50),
     number_student_libary int,
     constraint fk foreign key(number_student_libary) references Student(id_student)
 );
@@ -34,8 +28,6 @@ create table LibaryBook(
 -- bảng mượn sách
 create table BorrowOrder(
 	id_order int primary key,
-    name_book_borroworder varchar(50),
-    name_student_borroworder varchar(50),
     date_borrow date,
     date_return date,
     borrowoder_libary_number int,

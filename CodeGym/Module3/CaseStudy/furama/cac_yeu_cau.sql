@@ -29,18 +29,46 @@ GROUP BY kh.ho_ten
 ORDER BY COUNT(hd.id_khach_hang);
 
 
+
 -- 5. Hiển Thị "id_khach_hang, ho_ten, ten_loai_khach, id_hop_dong, ten_dich_vu, ngay_lam_hop_dong, 
 -- 		ngay_ket_thuc, tong_tien"(với công thức tính "tong_tien = chi_phi_thue + so_luong * gia")
 -- 		cho tất cả khách hàng từng đặt phòng(những khách hàng chưa đặt cũng hiển thị ra).
-select kh.id_khach_hang, kh.ho_ten, lk.ten_loai_khach, hd.id_hop_dong, dv.ten_dich_vu, hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, 
-		sum(chi_phi_thue + so_luong * gia) as tong_tien
-from khach_hang kh
-	left join loai_khach lk on kh.id_loai_khach = lk.id_loai_khach
-    left join hop_dong hd on hd.id_khach_hang = kh.id_khach_hang
-    left join dich_vu dv on dv.id_dich_vu = hd.id_dich_vu
-    left join hop_dong_chi_tiet hdct on hd.id_hop_dong = hdct.id_hop_dong
-    left join dich_vu_di_kem dvdk on hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
-    group by kh.id_khach_hang;
+SELECT kh.id_khach_hang, kh.ho_ten, lk.ten_loai_khach, hd.id_hop_dong, dv.ten_dich_vu, hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, 
+		SUM(chi_phi_thue + so_luong * gia) AS tong_tien
+FROM khach_hang kh
+	LEFT JOIN loai_khach lk ON kh.id_loai_khach = lk.id_loai_khach
+    LEFT JOIN hop_dong hd ON hd.id_khach_hang = kh.id_khach_hang
+    LEFT JOIN dich_vu dv ON dv.id_dich_vu = hd.id_dich_vu
+    LEFT JOIN hop_dong_chi_tiet hdct ON hd.id_hop_dong = hdct.id_hop_dong
+    LEFT JOIN dich_vu_di_kem dvdk ON hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
+    GROUP BY kh.id_khach_hang;
+    
+    
+-- 6. Hiển thị "id_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu" của tất cả các loại 
+-- 		dịch vụ chưa từng được khách hàng đặt từ quý 1 của năm 2019(quý 1 là tháng 1, 2, 3).
+SELECT dv.id_dich_vu, dv.ten_dich_vu, dv.dien_tich, dv.chi_phi_thue, ldv.ten_loai_dich_vu
+FROM dich_vu dv
+	LEFT JOIN loai_dich_vu ldv ON ldv.id_loai_dich_vu = dv.id_loai_dich_vu
+    WHERE dv.id_dich_vu NOT IN (
+		SELECT dv.id_dich_vu
+		FROM dich_vu dv
+		LEFT JOIN hop_dong hd ON hd.id_dich_vu = dv.id_dich_vu
+		WHERE (MONTH(hd.ngay_lam_hop_dong)) = 1 OR MONTH(hd.ngay_lam_hop_dong) = 2 OR MONTH(hd.ngay_lam_hop_dong) = 3
+		AND YEAR(hd.ngay_lam_hop_dong) = 2019);
+        
+        
+-- 7. Hiển thị thông tin "id_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu
+-- 		của tất cả các loại dịch vụ đã từng được khách hàng đặt phòng trong năm 2018 nhưng chưa từng được 
+-- 		khách hàng đặt phòng trong năm 2019.
+SELECT dv.id_dich_vu, dv.ten_dich_vu, dv.dien_tich, dv.so_nguoi_toi_da, dv.chi_phi_thue, ldv.ten_loai_dich_vu
+FROM dich_vu dv
+	LEFT JOIN loai_dich_vu ldv ON ldv.id_loai_dich_vu = dv.id_loai_dich_vu
+    LEFT JOIN hop_dong hd ON hd.id_dich_vu = dv.id_dich_vu
+    WHERE YEAR(hd.ngay_lam_hop_dong) = 2018 AND hd.id_dich_vu NOT IN (
+		SELECT id_dich_vu
+        FROM hop_dong
+        WHERE YEAR(ngay_lam_hop_dong) = 2019);
+    
     
 
 

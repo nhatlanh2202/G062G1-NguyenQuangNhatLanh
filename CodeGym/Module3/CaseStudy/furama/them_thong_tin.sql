@@ -57,17 +57,18 @@ VALUES
 ('gio', 1);
  INSERT INTO furama.`dich_vu` (ten_dich_vu, dien_tich, so_tang, so_nguoi_toi_da, chi_phi_thue, trang_thai, id_kieu_thue, id_loai_dich_vu)
  VALUES 
- ('villa1', 30, 2, '10', 30, 'avairable', 1, 1),
- ('villa2', 30, 1, '5', 15, 'avairable', 1, 1),
- ('house1', 30, 2, '10', 20, 'avairable', 2, 2),
- ('house2', 30, 1, '5', 10, 'avairable', 2, 2),
- ('room1', 30, 2, '10', 15, 'avairable', 3, 3),
- ('room2', 30, 1, '5', 8, 'avairable', 3, 3);
+ ('villa1', 30, 2, '10', 30, 'avairable', 1, 1), -- 1
+ ('villa2', 30, 1, '5', 15, 'avairable', 1, 1), -- 2
+ ('house1', 30, 2, '10', 20, 'avairable', 2, 2), -- 3
+ ('house2', 30, 1, '5', 10, 'avairable', 2, 2), -- 4
+ ('room1', 30, 2, '10', 15, 'avairable', 3, 3), -- 5
+ ('room2', 30, 1, '5', 8, 'avairable', 3, 3); -- 6
 INSERT INTO furama.`hop_dong` (ngay_lam_hop_dong, ngay_ket_thuc, id_nhan_vien, id_khach_hang, id_dich_vu) 
 VALUES 
-('2019-10-19', '2019-10-22', 1, 1, 1),
-('2019-03-19', '2019-04-19', 3, 3, 3),
-('2019-04-19', '2020-04-19', 4, 4, 4);
+('2019-10-19', '2019-10-22', 1, 1, 1), -- 1
+('2018-10-22', '2018-10-28', 2, 2, 2), -- 2
+('2019-03-19', '2019-04-19', 3, 3, 3), -- 3
+('2019-04-19', '2020-04-19', 4, 4, 4); -- 4
 INSERT INTO furama.`dich_vu_di_kem` (ten_dich_vu_di_kem, gia, don_vi, trang_thai_kha_dung) 
 VALUES 
 ('massage', 15, 2, 'avairable'),
@@ -80,4 +81,4 @@ VALUES
 (2, 1, 1),
 (2, 2, 1),
 (2, 3, 2),
-(2, 1, 3);
+(2, 4, 3);
