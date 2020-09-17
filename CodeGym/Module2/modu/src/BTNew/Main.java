@@ -65,5 +65,6 @@ public class Main {
         System.out.println("0. exit.");
         System.out.println("---------------------------");
         System.out.print("Chọn chức năng: ");
+        System.out.println();
     }
 }

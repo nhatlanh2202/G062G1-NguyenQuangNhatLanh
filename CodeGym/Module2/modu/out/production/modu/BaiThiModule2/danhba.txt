@@ -1,0 +1,5 @@
+so dien thoai, nhom danh ba, ho ten, gioi tinh, ngay sinh, email
+0978123123,1,Lanh,nam,da nang,12/02/2000,lanh@gmail.com
+0975588753,3,Lan,nu,hcm,20/02/2000,Lan@gmail.com
+0795588753,L,Linh,nam,da nang,12/12/2000,Linh@gmail.com
+0122546707,M,Long,nam,can tho,20/12/2000,long@gmail.com
