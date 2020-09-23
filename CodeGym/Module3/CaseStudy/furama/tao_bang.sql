@@ -92,9 +92,9 @@ CREATE TABLE hop_dong (
     id_khach_hang INT,
     id_dich_vu INT,
     PRIMARY KEY (id_hop_dong),
-    FOREIGN KEY (id_nhan_vien)
+	constraint fk_nhan_vien FOREIGN KEY (id_nhan_vien)
         REFERENCES nhan_vien (id_nhan_vien),
-    FOREIGN KEY (id_khach_hang)
+	constraint fk_khach_hang FOREIGN KEY (id_khach_hang)
         REFERENCES khach_hang (id_khach_hang),
     FOREIGN KEY (id_dich_vu)
         REFERENCES dich_vu (id_dich_vu)	
@@ -113,8 +113,29 @@ CREATE TABLE hop_dong_chi_tiet (
     id_hop_dong INT,
     id_dich_vu_di_kem INT,
     PRIMARY KEY (id_hop_dong_chi_tiet),
-    FOREIGN KEY (id_hop_dong)
+    constraint fk_hop_dong FOREIGN KEY (id_hop_dong)
         REFERENCES hop_dong (id_hop_dong),
     FOREIGN KEY (id_dich_vu_di_kem)
         REFERENCES dich_vu_di_kem (id_dich_vu_di_kem)
 );
+
+alter table hop_dong
+drop foreign key fk_nhan_vien;
+
+alter table hop_dong
+add constraint fk_nhan_vien foreign key(id_nhan_vien) references nhan_vien(id_nhan_vien) on delete cascade
+on update cascade;
+
+alter table hop_dong
+drop foreign key fk_khach_hang;
+ 
+alter table hop_dong
+add constraint fk_khach_hang foreign key(id_khach_hang) references khach_hang(id_khach_hang) on delete cascade
+on update cascade;
+ 
+alter table hop_dong_chi_tiet
+drop foreign key fk_hop_dong;
+ 
+alter table hop_dong_chi_tiet
+add constraint fk_hop_dong foreign key(id_hop_dong) references hop_dong(id_hop_dong) on delete cascade
+on update cascade;

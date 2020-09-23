@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layout</title>
+    <style>
+        .col-1 {width: 8.33%;}
+        .col-2 {width: 16.66%;
+            background-color: gray;
+            height: 100%;
+            text-align: center}
+        .col-3 {width: 25%;}
+        .col-4 {width: 33.33%;}
+        .col-5 {width: 41.66%;}
+        .col-6 {width: 50%;}
+        .col-7 {width: 58.33%;}
+        .col-8 {width: 66.66%;
+            height: 100%;}
+        .col-9 {width: 75%;}
+        .col-10 {width: 83.33%;}
+        .col-11 {width: 91.66%;}
+        .col-12 {width: 100%;}
+        #main{
+            position: relative;
+        }
+        [class*='col-']{
+            float: left;
+        }
+        body{
+            margin: 0;
+        }
+        #header{
+            position: fixed;
+            background-color: black;
+            height: 45px;
+            width: 100%;
+        }
+        #header ul,#header li{
+            margin: 0;
+            padding: 0;
+        }
+        #header li{
+            margin-left: 25px;
+            height: 45px;
+            position: relative;
+            float: left;
+            list-style: none;
+            color: #F8F8FF;
+            text-align: center;
+            line-height: 40px;
+        }
+        #head-link {
+            height: 900px;
+
+        }
+        #head-link ul,#head-link li{
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            color: #3399ff;
+        }
+        .ADS{
+            background-color: darkgray;
+            padding: 30px;
+            margin: 30px;
+        }
+        @media screen and (max-width: 768px){
+            [class*='col-']{
+                width: 100%;
+            }
+        }
+        .footer{
+            text-align: center;
+            color: white;
+            background-color: #333333;
+            height: 45px;
+            width: 100%;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="header">
+    <ul>
+        <li>Logo</li>
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+        <li>Contact</li>
+        <li style="float: right; width: 100px">Login</li>
+    </ul>
+</div>
+<div style="width: 100%;height: 40px"></div>
+<div id="head-link">
+    <div class="col-2">
+        <ul>
+            <li >Link</li>
+            <li>Link</li>
+            <li>Link</li>
+        </ul>
+    </div>
+    <div class="col-8">
+        <h1>Welcome Việt Nam</h1>
+        <div>
+            Việt Nam, tên chính thức là Cộng hòa xã hội chủ nghĩa Việt Nam, là một quốc gia ở ngoài cùng phía đông của
+            bán đảo Đông Dương thuộc khu vực Đông Nam Á, giáp Lào, Trung Quốc, Campuchia, Biển Đông và vịnh Thái Lan.
+            Thủ đô là Hà Nội từ năm 1976, Thành phố Hồ Chí Minh là thành phố lớn nhất về dân số. Việt Nam đã thiết lập
+            quan hệ ngoại giao với 188 quốc gia, là thành viên của Liên Hiệp Quốc, ASEAN, WTO, Phong trào không liên
+            kết cùng một số tổ chức quốc tế khác.
+        </div>
+        <hr>
+        <h2>Test</h2>
+        <div>Lorem ipsum...</div>
+    </div>
+    <div class="col-2">
+        <div class="ADS">ADS</div>
+        <div class="ADS">ADS</div>
+    </div>
+</div>
+<div class="footer">Footer Text</div>
+</body>
+</html>

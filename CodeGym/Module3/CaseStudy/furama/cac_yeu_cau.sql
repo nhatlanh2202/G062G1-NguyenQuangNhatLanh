@@ -104,8 +104,9 @@ left join dich_vu_di_kem dv on hc.id_dich_vu_di_kem = dv.id_dich_vu_di_kem
 where ten_loai_khach = 'Diamond' and (dia_chi = 'vinh' or dia_chi = 'quang ngai')
 group by ho_ten, ten_dich_vu_di_kem;
 
--- TAST 12: Hiển thị thông tin IDHopDong, TenNhanVien, TenKhachHang, SoDienThoaiKhachHang, TenDichVu, SoLuongDichVuDikem (được tính dựa trên tổng Hợp đồng chi tiết),
--- TienDatCoc của tất cả các dịch vụ đã từng được khách hàng đặt vào 3 tháng cuối năm 2019 nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2019.
+-- TAST 12: Hiển thị thông tin IDHopDong, TenNhanVien, TenKhachHang, SoDienThoaiKhachHang, TenDichVu, 
+-- 			SoLuongDichVuDikem (được tính dựa trên tổng Hợp đồng chi tiết), TienDatCoc của tất cả các 
+-- 			dịch vụ đã từng được khách hàng đặt vào 3 tháng cuối năm 2019 nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2019.
 
 select h.id_hop_dong, nv.ho_ten as 'nhân viên', kh.ho_ten as 'khách hàng', kh.SDT, dv.ten_dich_vu, sum(ct.so_luong), h.tien_dat_coc
 from hop_dong h
@@ -121,8 +122,8 @@ where month(hop_dong.ngay_lam_hop_dong) <10))
 and year(h.ngay_lam_hop_dong) = 2019
 group by id_hop_dong;
 
--- TAST 13:	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều 
--- như nhau)
+-- TAST 13:	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng. 
+-- 			(Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau)
 create view max
 as
 select  dv.ten_dich_vu_di_kem, count(dv.id_dich_vu_di_kem) as 'so_luong_lon_nhat'
@@ -138,8 +139,8 @@ from max
 group by ten_dich_vu_di_kem
 having so_luong_lon_nhat = (select max(so_luong_lon_nhat) from max);
 
--- TAST 14:	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. Thông tin hiển thị bao gồm IDHopDong, TenLoaiDichVu, TenDichVuDiKem,
--- SoLanSuDung.
+-- TAST 14:	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất. 
+--      	Thông tin hiển thị bao gồm IDHopDong, TenLoaiDichVu, TenDichVuDiKem,SoLanSuDung.
 
 select h.id_hop_dong, ldv.ten_loai_dich_vu, dk.ten_dich_vu_di_kem, count(dk.id_dich_vu_di_kem) as 'so_lan_su_dung'
 from hop_dong h
@@ -150,8 +151,8 @@ join dich_vu_di_kem dk on hc.id_dich_vu_di_kem = dk.id_dich_vu_di_kem
 group by dk.ten_dich_vu_di_kem
 having count(dk.id_dich_vu_di_kem) <= 1;
 
--- TAST 15:	Hiển thi thông tin của tất cả nhân viên bao gồm IDNhanVien, HoTen, TrinhDo, TenBoPhan, SoDienThoai, DiaChi mới chỉ lập được tối đa 3 hợp đồng 
--- từ năm 2018 đến 2019.
+-- TAST 15:	Hiển thi thông tin của tất cả nhân viên bao gồm IDNhanVien, HoTen, TrinhDo, TenBoPhan, SoDienThoai, DiaChi
+-- 		 mới chỉ lập được tối đa 3 hợp đồng từ năm 2018 đến 2019.
 
 select nv.id_nhan_vien, nv.ho_ten, b.ten_bo_phan, nv.SDT, nv.dia_chi, count(hd.id_nhan_vien) 
 from nhan_vien nv
@@ -164,16 +165,17 @@ having  count(hd.id_nhan_vien) <= 3;
 
 -- TAST 16:	Xóa những Nhân viên chưa từng lập được hợp đồng nào từ năm 2017 đến năm 2019.
 
-delete from nhan_vien 
+delete from nhan_vien
 where id_nhan_vien not in (
-select id_nhan_vien
-from (select nv.id_nhan_vien from nhan_vien nv
-join hop_dong on nv.id_nhan_vien = hop_dong.id_nhan_vien 
-where year( hop_dong.ngay_lam_hop_dong) in (2017, 2019)) as c);
+	select id_nhan_vien
+	from (
+		select nv.id_nhan_vien
+        from nhan_vien nv
+		join hop_dong on nv.id_nhan_vien = hop_dong.id_nhan_vien 
+		where year( hop_dong.ngay_lam_hop_dong) in (2017, 2019)) as c);
 
--- TAST 17: Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ  Platinium lên Diamond, chỉ cập nhật những khách hàng đã từng đặt phòng với
--- tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.
-
+-- TAST 17: Cập nhật thông tin những khách hàng có TenLoaiKhachHang từ  Platinium lên Diamond,
+-- 			 chỉ cập nhật những khách hàng đã từng đặt phòng với tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.
 update khach_hang
 set id_loai_khach = 1
 where id_loai_khach in (select id_loai_khach 
@@ -229,6 +231,10 @@ from nhan_vien nv
 union
 select kh.id_khach_hang , kh.ho_ten, kh.email, kh.SDT, kh.ngay_sinh, kh.dia_chi, 'khách hàng' as 'phân loại'
 from khach_hang kh ;
-    
+
+
+-- task 21:	Tạo khung nhìn có tên là V_NHANVIEN để lấy được thông tin của tất cả các nhân viên có 
+-- địa chỉ là “Hải Châu” và đã từng lập hợp đồng cho 1 hoặc nhiều Khách hàng bất kỳ  với ngày lập hợp đồng là “12/12/2019”
+
 
 

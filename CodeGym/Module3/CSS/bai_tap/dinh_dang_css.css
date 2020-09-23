@@ -1,0 +1,20 @@
+hr {
+     border: none;
+     border-top: 1px solid black;
+     margin-right: 720px;
+ }
+.b{
+    color: blue;
+}
+.b1{
+    color: mediumblue;
+}
+.p{
+    text-align: justify;
+    margin-right: 720px;
+    text-indent: 50px;
+    font-size: 17px;
+}
+sup{
+    font-size: 8px;
+}
