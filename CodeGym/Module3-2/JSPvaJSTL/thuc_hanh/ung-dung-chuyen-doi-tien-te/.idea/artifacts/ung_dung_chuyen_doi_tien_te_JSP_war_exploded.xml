@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ung-dung-chuyen-doi-tien-te-JSP:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/ung_dung_chuyen_doi_tien_te_JSP_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="ung-dung-chuyen-doi-tien-te-JSP/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ung-dung-chuyen-doi-tien-te-JSP" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
