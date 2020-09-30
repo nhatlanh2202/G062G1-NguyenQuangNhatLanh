@@ -235,6 +235,37 @@ from khach_hang kh ;
 
 -- task 21:	Tạo khung nhìn có tên là V_NHANVIEN để lấy được thông tin của tất cả các nhân viên có 
 -- địa chỉ là “Hải Châu” và đã từng lập hợp đồng cho 1 hoặc nhiều Khách hàng bất kỳ  với ngày lập hợp đồng là “12/12/2019”
+drop view if exists V_NHANVIEN;
+
+create view V_NHANVIEN as
+select nv.id_nhan_vien, nv.ho_ten, nv.ngay_sinh, nv.dia_chi, hd.ngay_lam_hop_dong
+from nhan_vien nv
+	join hop_dong hd using(id_nhan_vien)
+where nv.dia_chi = 'Hải Châu' and hd.ngay_lam_hop_dong = '2019-12-12';
+
+select * from V_NHANVIEN;
+
+-- Task 22. Thông qua khung nhìn V_NHANVIEN thực hiện cập nhật địa chỉ thành “Liên Chiểu” đối với tất cả các Nhân viên 
+-- 				được nhìn thấy bởi khung nhìn này :
+
+update V_NHANVIEN
+set dia_chi = 'Liên Chiểu';
+
+drop view if exists V_NHANVIEN;
+
+-- Task 23.	Tạo Store procedure Sp_1 Dùng để xóa thông tin của một Khách hàng nào đó với Id Khách hàng được truyền
+-- 				 vào như là 1 tham số của Sp_1 :
+drop procedure if exists Sp_1;
+delimiter //
+create procedure Sp_1(id_need_delete int)
+begin
+	delete from khach_hang
+    where id_khach_hang = id_need_delete;
+end //
+delimiter ;
+
+call Sp_1(7);
+drop procedure if exists Sp_1;
 
 
 
