@@ -31,8 +31,18 @@ public class HomePageServlet extends HttpServlet {
         }
     }
 
-    private void updateProduct(HttpServletRequest request, HttpServletResponse response) {
-
+    private void updateProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+        double price = Double.parseDouble(request.getParameter("price"));
+        int quantity = Integer.parseInt((request.getParameter("quantity")));
+        String color = request.getParameter("color");
+        String description = (request.getParameter("description"));
+        String category = request.getParameter("category");
+        Product product = new Product(id, name, price, quantity, color, description, category);
+        productBO.updateProduct(product);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/product/update.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void createProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -90,8 +100,12 @@ public class HomePageServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) {
-
+    private void showUpdateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        List<Product> productList = productBO.selectAllProduct();
+        request.setAttribute("productList", productList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/product/update.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void listProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

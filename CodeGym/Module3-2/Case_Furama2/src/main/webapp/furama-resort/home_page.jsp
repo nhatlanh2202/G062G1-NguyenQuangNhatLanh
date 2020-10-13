@@ -15,7 +15,7 @@
                 <img src="../img/logo.png" height="60" width="50" style="margin-left: 20px"/>
             </div>
             <div class="col-lg-9">
-                <h5 style="margin-left: 600px">Nhat Lanh</h5>
+                <h5 style="margin-left: 600px">Nguyễn Quang Nhật Lành</h5>
             </div>
         </div>
     </div>

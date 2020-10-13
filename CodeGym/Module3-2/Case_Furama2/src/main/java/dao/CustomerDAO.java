@@ -90,7 +90,7 @@ public class CustomerDAO implements ICustomerDAO {
                 dBConnection.close();
             }
         }
-        return null;
+        return "OK";
     }
 
     @Override
