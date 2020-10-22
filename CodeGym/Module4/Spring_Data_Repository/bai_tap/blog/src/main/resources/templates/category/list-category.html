@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="blog/layout :: head">
+</head>
+<body>
+<h3>category</h3>
+
+<div class="notify">
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
+
+<p>
+    <a th:href="@{/category/create}">
+        Add new category
+    </a>
+</p>
+
+<table id = "blogs">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row,rowStat : ${category}">
+        <td th:text="${row.getCategoryId()}"></td>
+        <td th:text="${row.getCategoryName()}"></td>
+        <td><a th:href="@{/category/{id}/edit(id=${row.getCategoryId()})}">edit</a></td>
+        <td><a th:href="@{/category/{id}/delete(id=${row.getCategoryId()})}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="blog/layout :: footer"></footer>
+</body>
+</html>

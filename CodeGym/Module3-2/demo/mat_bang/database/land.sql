@@ -9,9 +9,9 @@ create table land_type (
 
 insert into land_type
 values
-	(1, 'Platium'),
-	(2, 'Gold'),
-	(3, 'Sliver');
+	(1, 'Văn phòng'),
+	(2, 'Văn phòng chia sẽ'),
+	(3, 'Đầy đủ');
 
 create table land_status (
 	land_status_id int primary key,
@@ -20,9 +20,9 @@ create table land_status (
 
 insert into land_status
 values
-	(1, 'Empty'),
-	(2, 'Ordered'),
-	(3, 'Other');
+	(1, 'Trống'),
+	(2, 'Hạ tầng'),
+	(3, 'Đầy đủ');
     
 create table land (
 land_id varchar(50) primary key,

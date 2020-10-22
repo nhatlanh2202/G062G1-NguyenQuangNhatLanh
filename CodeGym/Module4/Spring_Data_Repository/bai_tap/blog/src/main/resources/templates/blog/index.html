@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="blog/layout :: head">
+</head>
+<body>
+<h3>Blogs</h3>
+
+<div class="notify">
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
+
+<p>
+    <a th:href="@{/blog/create}">
+        Add new blog
+    </a>
+</p>
+
+<table id = "blogs">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>BlogCategory</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row,rowStat : ${blogs}">
+        <td th:text="${row.getName()}"></td>
+        <td th:text="${row.getType()}"></td>
+        <td th:text="${row.blogCategory.categoryName}"></td>
+        <td><a th:href="@{/blog/{id}/edit(id=${row.getId()})}">edit</a></td>
+        <td><a th:href="@{/blog/{id}/delete(id=${row.getId()})}">delete</a></td>
+        <td><a th:href="@{/blog/{id}/view(id=${row.getId()})}">view</a></td>
+    </tr>
+    </tbody>
+</table>
+<div>
+    <ul  style="display: flex ;list-style: none">
+        <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
+        <a th:href="@{'/'(page=${blogs.number - 1})}" th:if="${blogs.hasPrevious()}"><button type="button" class="btn btn-secondary" style="margin-right: 5px">Previous</button></a>
+        <li th:each="i: ${#numbers.sequence(1, blogs.getTotalPages())}">
+            <a th:href="@{'/'(page=${i - 1}) }"><button type="button" class="btn btn-secondary" style="margin-right: 5px">[[${i}]]</button></a>
+        </li>
+        <a th:href="@{'/'(page=${blogs.number + 1})}" th:if="${blogs.hasNext()}"><button type="button" class="btn btn-secondary"style="margin-right: 5px">Next</button></a>
+    </ul>
+</div>
+<footer th:replace="blog/layout :: footer"></footer>
+</body>
+</html>
