@@ -16,7 +16,10 @@
         Add new category
     </a>
 </p>
-
+<form action="/">
+    <input type="text" name="keyword" th:value="${keywordOld}">
+    <input type="submit" value="Search">
+</form>
 <table id = "blogs">
     <thead>
     <tr>

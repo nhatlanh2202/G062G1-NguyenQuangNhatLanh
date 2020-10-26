@@ -11,8 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-;
+;import java.util.Optional;
 
 
 @Controller
@@ -21,11 +22,19 @@ public class BlogController {
     private BlogService blogService;
     @Autowired
     private CategoryService categoryService;
-    @GetMapping("/")
-    public String index(Model model, @PageableDefault(value = 2) Pageable pageable) {
-
-        model.addAttribute("blogs", blogService.findAll(pageable));
-        return "blog/index";
+//    @GetMapping("/")
+//    public String index(Model model, @PageableDefault(value = 2) Pageable pageable) {
+//
+//        model.addAttribute("blogs", blogService.findAll(pageable));
+//        return "blog/index";
+//    }
+    public String index(Model model, @PageableDefault(size = 2) Pageable pageable,
+                        @RequestParam Optional<String> keyword){
+        String keywordOld = "";
+        if (keyword.isPresent()){
+            keywordOld = keyword.get();
+            model.addAttribute("blogs",blogService.)
+        }
     }
 
     @GetMapping("/blog/create")

@@ -2,32 +2,53 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sign Up</title>
 </head>
+<h1>Sign Up</h1>
 <body>
 <form th:action="@{/create}" method="post" th:object="${registerForm}">
     <input type="hidden" th:field="*{id}">
 
-    <label>First Name:</label>
-    <input type="text" th:field="*{firstName}">
-    <span style="color: red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
-    <br/>
-    <label>Last Name:</label>
-    <input type="text" th:field="*{lastName}">
-    <span style="color: red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
-    <br/>
-    <label>Age:</label>
-    <input type="text"  th:field="*{age}">
-    <span style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>
-    <br/>
-    <label>phoneNumber:</label>
-    <input type="text"  th:field="*{phone}">
-    <span style="color: red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
-    <br/>
-    <label>email:</label>
-    <input type="text"  th:field="*{email}">
-    <span style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-    <br/>
+    First Name: <input type="text" style="margin-left: 50px" th:field="*{firstName}">
+    <br>
+    <p style="color: red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></p>
+    <br>
+<!--    <label>First Name:</label>-->
+<!--    <input type="text" th:field="*{firstName}">-->
+<!--    <span style="color: red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>-->
+<!--    <br/>-->
+    Last Name: <input type="text" style="margin-left: 51px" th:field="*{lastName}">
+    <br>
+    <p style="color: red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></p>
+    <br>
+<!--    <label>Last Name:</label>-->
+<!--    <input type="text" th:field="*{lastName}">-->
+<!--    <span style="color: red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>-->
+<!--    <br/>-->
+    Age: <input type="text" style="margin-left: 94px" th:field="*{age}">
+    <br>
+    <p style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></p>
+    <br>
+<!--    <label>Age:</label>-->
+<!--    <input type="text"  th:field="*{age}">-->
+<!--    <span style="color: red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></span>-->
+<!--    <br/>-->
+    Phone Number: <input type="text" style="margin-left: 25px" th:field="*{phone}">
+    <br>
+    <p style="color: red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>
+    <br>
+<!--    <label>phoneNumber:</label>-->
+<!--    <input type="text"  th:field="*{phone}">-->
+<!--    <span style="color: red" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>-->
+<!--    <br/>-->
+    Email: <input type="text" style="margin-left: 83px" th:field="*{email}">
+    <br>
+    <p style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+    <br><br>
+<!--    <label>email:</label>-->
+<!--    <input type="text"  th:field="*{email}">-->
+<!--    <span style="color: red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>-->
+<!--    <br/>-->
     <button type="submit">Submit</button>
 </form>
 </body>
