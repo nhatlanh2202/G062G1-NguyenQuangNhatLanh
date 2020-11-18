@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Common</title>
+</head>
+<body>
+<header th:fragment="headerBlog">
+    <h2>Welcome, <span sec:authentication="principal.username"></span></h2>
+    <hr>
+</header>
+
+<footer th:fragment="footerBlog">
+</footer>
+</body>
+</html>
+
+<!--//    @GetMapping("/register")-->
+<!--//    public String register(Model model) {-->
+<!--//        model.addAttribute("appRoleList", this.userDetailsService.allAppRole());-->
+<!--//        model.addAttribute("newUser", new AppUser());-->
+<!--//        return "register";-->
+<!--//    }-->
+
+<!--//    @PostMapping("/registerNew")-->
+<!--//    public String registerNew(@ModelAttribute AppUser appUser, @RequestParam Long[] appRole,-->
+<!--//                                                      RedirectAttributes redirectAttributes) {-->
+<!--//        boolean check = true;-->
+<!--//        List<AppUser> appUserList = this.userDetailsService.allAppUser();-->
+<!--    //        for (AppUser appUserExist : appUserList) {-->
+<!--    //            if (appUser.getUserName().equals(appUserExist.getUserName())) {-->
+<!--    //                check = false;-->
+<!--    //                break;-->
+<!--    //            }-->
+<!--    //        }-->
+<!--    //        if (check) {-->
+<!--    //            appUser.setEncrytedPassword(bCryptPasswordEncoder.encode(appUser.getEncrytedPassword()));-->
+<!--    //            this.userDetailsService.saveNewUser(appUser);-->
+<!--    //            for (Long element : appRole) {-->
+<!--    //                this.userDetailsService.saveUserRole(appUser, element);-->
+<!--    //            }-->
+<!--    //            redirectAttributes.addFlashAttribute("message", "Register Complete !");-->
+<!--    //            return "redirect:/login";-->
+<!--    //        } else {-->
+<!--    //            redirectAttributes.addFlashAttribute("message", "User Name is existed !");-->
+<!--    //            return "redirect:/register";-->
+<!--    //        }-->
+<!--    //    }-->

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+
+</head>
+<body>
+<th:block th:include="/menu"></th:block>
+<div>
+    <div class="content" style="height: 80vh">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2" style="display: flex;flex-direction: column">
+                    <a href="/customer/create" class="a" style="margin-top: 70px"><i class="fa fa-plus"></i> Add New
+                        Customer</a>
+                    <a href="/services/create" class="a" style="margin-top: 40px"><i class="fa fa-plus"></i> Add New
+                        Service </a>
+                    <a href="/contract/contract-detail/create" class="a" style="margin-top: 40px"><i class="fa fa-plus"></i> Add
+                        New Contract Detail</a>
+                </div>
+                <div class="col-10">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    /*background: url("https://files.giaoducthoidai.vn/Uploaded/haihn/2019-12-25/14-3-FFYL.jpg");*/
+    /*background-size: auto;*/
+    background: black;
+}
+nav{
+    box-shadow: 3px 3px 20px #f40005;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    padding: 10px 100px;
+    box-sizing: border-box;
+}
+nav ul {
+    float: right;
+    margin: -6px;
+    padding: 0 ;
+    display: flex;
+}
+nav ul li{
+    list-style: none;
+    margin-right: 100px;
+    margin-left: 50px;
+}
+
+label{
+    color: red;
+}
+
+nav ul li a{
+    margin-left: 20%;
+    font-family: 'Lobster', cursive;
+    position: relative;
+    display: inline-block;
+    padding: 7px 10px;
+    color: #03e9f4;
+    font-size: 18px;
+    text-decoration:none!important;
+    transition: 0.5s;
+    overflow: hidden;
+}
+nav ul li a:hover{
+    margin-left: 20%;
+    background: #f1f4d4;
+    color: #050801;
+    box-shadow: 0 0 5px #f1f4d4,
+    0 0 15px #f1f4d4,
+    0 0 15px #f1f4d4,
+    0 0 25px #f1f4d4;
+}
+nav ul li a span{
+    position: absolute;
+    display: block;
+}
+.a{
+    font-family: 'Lobster', cursive;
+    box-shadow: 3px 3px 20px red;
+    position: relative;
+    display: inline-block;
+    padding: 7px 10px;
+    color: white;
+    font-size: 18px;
+    text-decoration:none!important;
+    transition: 0.5s;
+    overflow: hidden;
+    text-align: center;
+}
+.a:hover{
+    color: red;
+}
+
+.col-10{
+    display: flex;
+    flex-direction: column;
+    margin-top: 65px;
+    align-items: center;
+    justify-content: end;
+}
+.neon{
+    color: red;
+    text-align: center;
+    margin-bottom:50px;
+    top: 50%;
+    left: 50%;
+    padding: 0 20px;
+    font-family: 'Lobster', cursive;
+}
+
+.cancel{
+    position: relative;
+    display: inline-block;
+    padding: 7px 10px;
+    color: black;
+    font-size: 18px;
+    text-decoration:none!important;
+    transition: 0.5s;
+    overflow: hidden;
+    text-align: center;
+    background-color: #adb5bd;
+    border-radius: 12px;
+}
+
+.cancel:hover{
+    box-shadow: 0 0 5px #adb5bd,
+    0 0 15px #adb5bd,
+    0 0 15px #adb5bd,
+    0 0 25px #adb5bd;
+}
+
+.add {
+    position: relative;
+    display: inline-block;
+    padding: 7px 10px;
+    color: black;
+    font-size: 18px;
+    text-decoration:none!important;
+    transition: 0.5s;
+    overflow: hidden;
+    text-align: center;
+    background-color: #54d872;
+    border-radius: 12px;
+}
+.add:hover{
+    box-shadow: 0 0 5px #54d872,
+    0 0 15px #54d872,
+    0 0 15px #54d872,
+    0 0 25px #54d872;
+}
+.delete{
+    position: relative;
+    display: inline-block;
+    padding: 7px 10px;
+    color: black;
+    font-size: 18px;
+    text-decoration:none!important;
+    transition: 0.5s;
+    overflow: hidden;
+    text-align: center;
+    background-color: #ff071e;
+    border-radius: 12px;
+}
+.delete:hover{
+    box-shadow: 0 0 5px #F9F6FF,
+    0 0 15px #F9F6FF,
+    0 0 15px #F9F6FF,
+    0 0 25px #F9F6FF;
+}
+.form-group label,td{
+    color: red;
+}
+.search{
+    font-family: 'Lobster', cursive;
+    color: red;
+    font-size: 20px;
+}
+.btnSearch{
+    background: #f6ffe6;
+    font-family: 'Lobster', cursive;
+    box-shadow: 0 0 5px #dcfff7,
+    0 0 5px #dcfff7,
+    0 0 5px #dcfff7,
+    0 0 5px #dcfff7;
+    color: #1314ff;
+}
+.page-label{
+    font-family: 'Lobster', cursive;
+}
+

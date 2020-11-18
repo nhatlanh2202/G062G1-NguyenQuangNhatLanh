@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+    <meta charset="UTF-8">
+    <title>Contract</title>
+</head>
+<body>
+<th:block th:include="/menu"></th:block>
+<div>
+    <div class="content" style="height: 80vh">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2" style="display: flex;flex-direction: column">
+                    <a href="/contract/create" class="a" style="margin-top: 70px"><i class="fa fa-plus"></i> Add New
+                        Contract</a>
+                </div>
+                <div class="col-10">
+                    <h2 class="neon" data-text="List Of Contract">List Of Contract</h2>
+                    <form action="/contract">
+                        <div class="search-box">
+                            <input class="search-txt" type="text" name="search" placeholder="Type to search"
+                                   th:value="${search}">
+                            <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </form>
+                    <h3><div class="notify" style="color: red ;text-align: center">
+                        <div th:if="${success}">
+                            <span th:text="${success}"></span>
+                        </div>
+                    </div>
+                    </h3>
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Deposit</th>
+                            <th scope="col">Start Date</th>
+                            <th scope="col">End Date</th>
+                            <th scope="col">Total Money</th>
+                            <th scope="col">Customer</th>
+                            <th scope="col">Service</th>
+                        </tr>
+                        </thead>
+                        <tbody style="background-color: #f7f5f2">
+                        <tr class="contentPage" th:each="contract : ${contracts}">
+                            <th th:text="${contract.idContract}"></th>
+                            <th th:text="${contract.deposit}"></th>
+                            <th th:text="${contract.startDate}"></th>
+                            <th th:text="${contract.endDate}"></th>
+                            <th th:text="${contract.totalMoney}"></th>
+                            <th th:text="${contract.customer.name}"></th>
+                            <th th:text="${contract.services.nameService}"></th>
+                        </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                    <label class="page-label">
+                    <a th:href="@{'/contract/'(page=${contracts.number - 1},search=${search})}"
+                       th:if="${contracts.hasPrevious()}">Previous</a>
+                    <span th:text="${contracts.number + 1}" style="color: red"></span>/<span
+                        th:text="${contracts.totalPages}" style="color: red"></span>
+                    <a th:href="@{'/contract/'(page=${contracts.number + 1},search=${search})}"
+                       th:if="${contracts.hasNext()}">Next</a>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

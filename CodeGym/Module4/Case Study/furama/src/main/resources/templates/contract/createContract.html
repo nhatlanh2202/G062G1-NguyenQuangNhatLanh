@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<th:block th:include="/menu"></th:block>
+<div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form th:action="@{/contract/save}" method="post" th:object="${contracts}">
+                <div class="modal-header">
+                    <h4 class="neon" style="margin: 0">Add New Contract</h4>
+                    <a href="/customer">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </a>
+                </div>
+                <div class="notify" style="color: red ;text-align: center">
+                    <div th:if="${success}">
+                        <span th:text="${success}"></span>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Id :</label>
+                        <input type="text" class="form-control" th:field="*{idContract}">
+                    </div>
+                    <div class="form-group">
+                        <label>Deposit : </label>
+                        <input type="text" class="form-control" th:field="*{deposit}">
+                    </div>
+                    <div class="form-group">
+                        <label>Start Date:</label>
+                        <div class="input-group "><input class="form-control" type="date" th:field="*{startDate}"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>End Date : </label>
+                        <div class="input-group"><input class="form-control" type="date" th:field="*{endDate}"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Total Money : </label>
+                        <input type="text" class="form-control" th:field="*{totalMoney}">
+                    </div>
+                    <div class="form-group">
+                        <label>Customer :</label>
+                        <select name="customer" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" th:field="*{customer}">
+                            <option th:each="cus :${customer}" th:value="${cus.id}"
+                                    th:text="${cus.name}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Service :</label>
+                        <select name="services" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" th:field="*{services}">
+                            <option th:each="ser :${service}" th:value="${ser.idService}"
+                                    th:text="${ser.nameService}"></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="/customer"><input type="button" class="cancel" value="Cancel"></a>
+                    <input type="submit" class="add" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

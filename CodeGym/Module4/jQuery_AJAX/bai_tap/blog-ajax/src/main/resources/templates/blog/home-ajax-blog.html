@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Blog</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Content</th>
+        </tr>
+        </thead>
+        <tbody id="tableList">
+        </tbody>
+    </table>
+</div>
+<br>
+<input type="button" id="loadMore" value="Load More"><br><br>
+<div id="hetRoi"></div>
+<br>
+<label>
+    <input type="text" id="keyword" placeholder="Input key word"/>
+</label>
+<input id="searchBlog" type="button" value="Search"/><br>
+
+<div id="searchResult"></div>
+
+<script src="../js/jquery-3.5.1.min.js"></script>
+<script>
+    let data = '';
+    $(document).ready(function () {
+
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "GET",
+            url: "http://localhost:8080/restBlog/ajax-blog",
+            success: function (listBlog) {
+                for (let i = 0; i < listBlog.length; i++) {
+                    data += '<tr>\n' +
+                        '<td>' + listBlog[i].name + '</td>\n' +
+                        '<td>' + listBlog[i].content + '</td>\n' +
+                        '</tr>';
+                }
+                $("#tableList").html(data);
+            },
+            error: function (content) {
+                console.log(content);
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        // let data = '';
+        // let hetRoi = '';
+        $("#searchBlog").click(function () {
+            data = '';
+            let keyword = $("#keyword").val();
+            console.log(keyword);
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "GET",
+                url: "http://localhost:8080/restBlog/blogList/" + keyword,
+                success: function (listBlog) {
+                    for (let i = 0; i < listBlog.length; i++) {
+                        data += '<tr>\n' +
+                            '<td>' + listBlog[i].name + '</td>\n' +
+                            '<td>' + listBlog[i].content + '</td>\n' +
+                            '</tr>';
+                    }
+                    $("#tableList").html(data);
+                },
+                error: function (content) {
+                    console.log(content);
+                }
+            });
+        });
+    });
+
+    $(document).ready(function () {
+        let limit = 2;
+        let start = 0;
+        let data = '';
+        let hetRoi = '';
+        $.ajax({
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            type: "GET",
+            url: "http://localhost:8080/restBlog/ajax-blog-scroll/" + limit + "/" + start,
+            success: function (listBlog) {
+                for (let i = 0; i < listBlog.length; i++) {
+                    data += '<tr>\n' +
+                        '<td>' + listBlog[i].name + '</td>\n' +
+                        '<td>' + listBlog[i].content + '</td>\n' +
+                        '</tr>';
+                }
+                $("#tableList").html(data);
+            },
+            error: function (content) {
+                console.log(content);
+            }
+        });
+
+        $('#loadMore').click(function () {
+            start += 2;
+            let dataEmpty = "";
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "GET",
+                url: "http://localhost:8080/restBlog/ajax-blog-scroll/" + limit + "/" + start,
+                success: function (listBlog) {
+                    for (let i = 0; i < listBlog.length; i++) {
+                        data += '<tr>\n' +
+                            '<td>' + listBlog[i].name + '</td>\n' +
+                            '<td>' + listBlog[i].content + '</td>\n' +
+                            '</tr>';
+                        dataEmpty += listBlog[i].name;
+                    }
+                    $("#tableList").html(data);
+                    if (dataEmpty === '') {
+                        hetRoi = 'Hết thông tin rồi!' + '<br>';
+                    }
+                    $("#hetRoi").html(hetRoi);
+                },
+                error: function (content) {
+                    console.log(content);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

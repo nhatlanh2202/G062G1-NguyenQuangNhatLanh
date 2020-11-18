@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+
+</head>
+<body>
+
+<th:block th:include="/menu"></th:block>
+
+<div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form th:action="@{/services/delete}" method="post" th:object="${service}">
+                <div class="modal-header">
+                    <h4 class="neon" style="margin: 0">Delete Service</h4>
+                    <a href="/services"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></a>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td><input type="hidden"  th:field="*{idService}"></td>
+                        </tr>
+                        <tr>
+                            <td>Name : </td>
+                            <td  th:text="${service.nameService}"></td>
+                        </tr>
+                        <tr>
+                            <td>Area : </td>
+                            <td  th:text="${service.area}"></td>
+                        </tr>
+                        <tr>
+                            <td>Floor : </td>
+                            <td  th:text="${service.floor}"></td>
+                        </tr>
+                        <tr>
+                            <td>Number of people : </td>
+                            <td  th:text="${service.numberOfPeople}"></td>
+                        </tr>
+                        <tr>
+                            <td>Cost : </td>
+                            <td th:text="${service.cost}"></td>
+                        </tr>
+                        <tr>
+                            <td>Status : </td>
+                            <td th:text="${service.status}"></td>
+                        </tr>
+                        <tr>
+                            <td>Rent Type : </td>
+                            <td th:text="${service.rentType.nameRentType}"></td>
+                        </tr>
+                        <tr>
+                            <td>Service Type : </td>
+                            <td th:text="${service.serviceType.nameServiceType}"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-body">
+                    <p style="color: crimson">Are you sure you want to delete these Records?</p>
+                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/services"><input type="button" class="cancel" data-dismiss="modal" value="Cancel"></a>
+                    <input type="submit" class="delete" value="Delete">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+
+</head>
+<body>
+
+<th:block th:include="/menu"></th:block>
+<!--end menu-->
+
+<!--<br><br>-->
+<div>
+    <div class="content" style="height: 80vh">
+        <div class="container-fluid">
+            <div class="row" >
+                <div class="col-2" style="display: flex;flex-direction: column" >
+                    <!--                <a class="btn btn-primary mt-1" href="#addEmployeeModal" data-toggle="tooltip">Item 1</a>-->
+                    <a href="/customer/create" class="a" style="margin-top: 70px"><i class="fa fa-plus"></i> Add New Customer</a>
+                    <a href="/customer"  class="a" style="margin-top: 50px">List Of Customer</a>
+                </div>
+                <div class="col-10">
+                    <h2 class="neon" >List Of Customer Use Service </h2>
+                    <div class="search-box">
+                        <input class="search-txt" type="text" name="" placeholder="Type to search">
+                        <a href="#" class="search-btn" ><i class="fa fa-search" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="notify" style="color: red ;text-align: center">
+                        <div th:if="${success}">
+                            <span th:text="${success}"></span>
+                        </div>
+                    </div>
+                    <table class="table table-striped">
+                        <thead class="thead-dark" >
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"style="width: 40%;">Customer</th>
+                            <th scope="col"style="width: 30%;">Service name</th>
+                        </tr>
+                        </thead>
+                        <tbody style="background-color: #f7f5f2">
+                        <tr th:each="contract : ${contract}">
+                            <th th:text="${contract.customer.id}"></th>
+                            <th th:text="${contract.customer.name}"></th>
+                            <th th:text="${contract.services.nameService}"></th>
+                        </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                    <a th:href="@{'/'(page=${contracts.number - 1})}" th:if="${contracts.hasPrevious()}">Previous</a>
+                    <span th:text="${contracts.number + 1}"style="color: black"></span>/<span th:text="${contracts.totalPages}" style="color: black"></span>
+                    <a th:href="@{'/'(page=${contracts.number + 1})}" th:if="${contracts.hasNext()}">Next</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end content-->
+    <div class="footer" >
+        <div class="container-fluid">
+            <div class="row" >
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

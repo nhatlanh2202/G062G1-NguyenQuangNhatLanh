@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+</head>
+<body>
+
+<th:block th:include="/menu"></th:block>
+
+<div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form th:action="@{/employee/delete}" method="post" th:object="${employee}">
+                <div class="modal-header">
+                    <h4 class="neon" style="margin: 0">Delete Customer</h4>
+                    <a href="/employee"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button></a>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td><input type="hidden"  th:field="*{id}"></td>
+                        </tr>
+                        <tr>
+                            <td>Name : </td>
+                            <td  th:text="${employee.name}"></td>
+                        </tr>
+                        <tr>
+                            <td>Date of birth : </td>
+                            <td  th:text="${employee.birthday}"></td>
+                        </tr>
+                        <tr>
+                            <td>Id card : </td>
+                            <td  th:text="${employee.idCard}"></td>
+                        </tr>
+                        <tr>
+                            <td>Phone : </td>
+                            <td  th:text="${employee.phoneNumber}"></td>
+                        </tr>
+                        <tr>
+                            <td>Email : </td>
+                            <td th:text="${employee.email}"></td>
+                        </tr>
+                        <tr>
+                            <td>Address : </td>
+                            <td th:text="${employee.address}"></td>
+                        </tr>
+                        <tr>
+                            <td>Division : </td>
+                            <td th:text="${employee.division.divisionName}"></td>
+                        </tr>
+                        <tr>
+                            <td>Education : </td>
+                            <td th:text="${employee.educationDegree.educationDegreeName}"></td>
+                        </tr>
+                        <tr>
+                            <td>Position : </td>
+                            <td th:text="${employee.position.positionName}"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-body">
+                    <p style="color: crimson">Are you sure you want to delete these Records?</p>
+                    <p class="text-warning"><small>This action cannot be undone.</small></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/employee"><input type="button" class="cancel" data-dismiss="modal" value="Cancel"></a>
+                    <input type="submit" class="delete" value="Delete">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

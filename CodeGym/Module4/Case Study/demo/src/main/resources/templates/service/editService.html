@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+
+</head>
+<body>
+
+<th:block th:include="/menu"></th:block>
+
+<div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form th:action="@{/services/update}" method="post" th:object="${service}">
+                <div class="modal-header">
+                    <h4 class="neon" style="margin: 0">Edit Service</h4>
+                    <a href="/services">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="hidden" th:field="*{idService}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" th:field="*{nameService}">
+                    </div>
+                    <div class="form-group">
+                        <label>Area</label>
+                        <input type="text" class="form-control" th:field="*{area}">
+                    </div>
+                    <div class="form-group">
+                        <label>Floor</label>
+                        <input type="text" class="form-control" th:field="*{floor}">
+                    </div>
+                    <div class="form-group">
+                        <label>Number of people</label>
+                        <input type="text" class="form-control" th:field="*{numberOfPeople}">
+                    </div>
+                    <div class="form-group">
+                        <label>Cost</label>
+                        <input type="text" class="form-control" th:field="*{cost}">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <input type="text" class="form-control" th:field="*{status}">
+                    </div>
+                    <div class="form-group">
+                        <label>Rent Type</label>
+                        <select name="rentType" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" th:field="*{rentType}">
+                            <option th:each="rent :${rentType}" th:value="${rent.id}" th:text="${rent.nameRentType}"
+                                    th:selected="${rent.id} == *{rentType.id}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Service Type</label>
+                        <select name="serviceType" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false" th:field="*{serviceType}">
+                            <option th:each="ser :${serviceType}" th:value="${ser.id}" th:text="${ser.nameServiceType}"
+                                    th:selected="${ser.id} == *{serviceType.id}"></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="/services"><input type="button" class="cancel" value="Cancel"></a>
+                    <input type="submit" class="add" value="Save">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

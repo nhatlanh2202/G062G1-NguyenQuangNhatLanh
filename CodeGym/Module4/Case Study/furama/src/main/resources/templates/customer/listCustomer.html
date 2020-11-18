@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout::head">
+    <meta charset="UTF-8">
+    <title>Customer</title>
+</head>
+<body>
+
+<th:block th:include="/menu"></th:block>
+<div>
+    <div class="content" style="height: 80vh">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2" style="display: flex;flex-direction: column">
+                    <!--                <a class="btn btn-primary mt-1" href="#addEmployeeModal" data-toggle="tooltip">Item 1</a>-->
+                    <a href="/customer/create" class="a" style="margin-top: 70px"><i class="fa fa-plus"></i> Add New
+                        Customer</a>
+                    <a href="/customer-services" class="a" style="margin-top: 50px">List Customer Use Service</a>
+                </div>
+                <div class="col-10">
+                    <h2 class="neon" data-text="List Of Customer">List Of Customer</h2>
+                    <form action="/customer">
+                        <div class="search-box">
+                            <input class="search-txt" type="text" name="search" placeholder="Type to search"
+                                   th:value="${search}">
+                            <button class="search-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </form>
+                    <div class="notify" style="color: red ;text-align: center">
+                        <div th:if="${success}">
+                            <span th:text="${success}"></span>
+                        </div>
+                    </div>
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Date of birth</th>
+                            <th scope="col">Id Card</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Customer Type</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody style="background-color: #f7f5f2">
+                        <tr class="contentPage" th:each="customer : ${customers}">
+                            <th th:text="${customer.id}"></th>
+                            <th th:text="${customer.name}"></th>
+                            <th th:text="${customer.birthday}"></th>
+                            <th th:text="${customer.idCard}"></th>
+                            <th th:text="${customer.phoneNumber}"></th>
+                            <th th:text="${customer.email}"></th>
+                            <th th:text="${customer.address}"></th>
+                            <th th:text="${customer.customerType.customerTypeName}"></th>
+                            <td>
+                                <a th:href="@{/customer/{id}/edit(id=${customer.getId()})}" class="edit" title="Edit"><i
+                                        class="material-icons">&#xE254;</i></a>
+                                <a th:href="@{/customer/{id}/delete(id=${customer.getId()})}" title="Delete"
+                                   style="color: red"><i class="material-icons">&#xE872;</i></a>
+                                <a th:href="@{/contract/{id}/create(id=${customer.getId()})}" title="Add contract"><i
+                                        style="color: limegreen" class="material-icons">&#xe145;</i></a>
+                            </td>
+                        </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                    <label class="page-label">
+                    <a th:href="@{'/customer/'(page=${customers.number - 1},search=${search})}"
+                       th:if="${customers.hasPrevious()}">Previous</a>
+                    <span th:text="${customers.number + 1}" style="color: red"></span>/<span
+                        th:text="${customers.totalPages}" style="color: red"></span>
+                    <a th:href="@{'/customer/'(page=${customers.number + 1},search=${search})}"
+                       th:if="${customers.hasNext()}">Next</a>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
