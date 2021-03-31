@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+
+#myCss a {
+  font-family: 'Lobster', cursive;
+  font-size: 130%;
+  color: #8b000a;
+}
+h3 {
+  font-family: 'Lobster', cursive;
+  font-size: 130%;
+  color: #ff8823;
+}

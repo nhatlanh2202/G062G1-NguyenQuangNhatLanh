@@ -1,0 +1,81 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "customers": [
+    {
+      "idCus": "KH-2202",
+      "name": "Lành",
+      "birthDay": "2000-02-22",
+      "idCard": "000999444",
+      "phone": "0901230222",
+      "address": "Đà Nẵng",
+      "email": "nhatlanh2202@gmail.com",
+      "customerType": "Silver",
+      "id": 1
+    },
+    {
+      "idCus": "KH-1234",
+      "name": "Danh",
+      "birthDay": "2000-12-12",
+      "idCard": "000999333",
+      "phone": "0905550333",
+      "address": "Quảng Nam",
+      "email": "phong@gmail.com",
+      "customerType": "Platinum",
+      "id": 2
+    },
+    {
+      "idCus": "KH-9999",
+      "name": "Nguyệt",
+      "birthDay": "2000-11-11",
+      "idCard": "000222444",
+      "phone": "0901230321",
+      "address": "Hà Nội",
+      "email": "nguyet@gmail.com",
+      "customerType": "Silver",
+      "id": 3
+    },
+    {
+      "idCus": "KH-0009",
+      "name": "Hoa",
+      "birthDay": "2000-03-08",
+      "idCard": "000111333",
+      "phone": "0905678022",
+      "address": "HCM",
+      "email": "hoa@gmail.com",
+      "customerType": "Member",
+      "id": 4
+    },
+    {
+      "idCus": "KH-1910",
+      "name": "Phong",
+      "birthDay": "2001-12-12",
+      "idCard": "888999444",
+      "phone": "0901005000",
+      "address": "quang nam",
+      "email": "phong@gmail.com",
+      "customerType": "Gold",
+      "id": 5
+    }
+  ]
+}

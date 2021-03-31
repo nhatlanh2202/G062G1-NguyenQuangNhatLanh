@@ -1,0 +1,37 @@
+<div *ngIf="studentCreate">
+  <div class="card" style="width:400px">
+    <div class="container">
+      <div style="max-width: 100%">
+        <h3 style="color: red; text-shadow: 2px 2px 8px blue; text-align: center">Student Information</h3>
+      </div>
+      <div>
+        <tr>
+          <label>Id: </label>
+          <input type="text" #idCreate>
+        </tr>
+        <tr>
+          <label>Name: </label>
+          <input type="text" #nameCreate>
+        </tr>
+        <tr>
+          <label>Age: </label>
+          <input type="text" #ageCreate>
+        </tr>
+        <tr>
+          <label>Mark: </label>
+          <input type="number" #markCreate>
+        </tr>
+        <input type="button" value="Create" (click)="createNewStudent(idCreate.value, nameCreate.value, ageCreate.value, markCreate.value)">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

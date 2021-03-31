@@ -1,0 +1,121 @@
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <form [formGroup]="formEditProduct">
+      <div class="text-center">
+        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-2" id="add">
+          <strong>Sửa thông tin xe</strong></h3>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <label>Số xe:</label>
+          <input type="text" class="form-control" formControlName="soXe" disabled/>
+          <p class="text-danger"
+             *ngIf="formEditProduct.controls.soXe?.invalid && (formEditProduct.controls.soXe?.dirty
+                    || formEditProduct.controls.soXe?.touched)">
+            Buzzz!
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Tên nhà xe:</label>
+          <input type="text" class="form-control" formControlName="tenNhaXe" required/>
+          <p class="text-danger"
+             *ngIf="formEditProduct.controls.tenNhaXe?.invalid && (formEditProduct.controls.tenNhaXe?.dirty
+            || formEditProduct.controls.tenNhaXe?.touched)">
+            Buzzz!
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Điểm đi:</label>
+          <select style="width: 100%; height: 37px" formControlName="diemDi">
+            <option>Đà Nẵng</option>
+            <option>Hà Nội</option>
+            <option>Hồ Chí Minh</option>
+          </select>
+          <!--          <input type="text" class="form-control" formControlName="diemDi" required/>-->
+          <p class="text-danger"
+             *ngIf="formEditProduct.controls.diemDi?.invalid && (formEditProduct.controls.diemDi?.dirty
+            || formEditProduct.controls.diemDi?.touched)">
+            Buzzz!
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Điểm đến:</label>
+          <select style="width: 100%; height: 37px" formControlName="diemDen">
+            <option>Quảng Trị</option>
+            <option>Hà Nội</option>
+            <option>Quảng Trị</option>
+            <option>Huế</option>
+            <option>Thanh Hóa</option>
+          </select>
+          <!--          <input type="text" class="form-control" formControlName="diemDen" required/>-->
+          <p class="text-danger"
+             *ngIf="formEditProduct.controls.diemDen?.invalid && (formEditProduct.controls.diemDen?.dirty
+            || formEditProduct.controls.diemDen?.touched)">
+            Buzzz!
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Số điện thoại:</label>
+          <input type="text" class="form-control" placeholder="Định dạng (090|093|097)XXXXXX" formControlName="soDienThoai" required/>
+          <p class="text-danger"
+             *ngIf="formEditProduct.controls.soDienThoai?.invalid && (formEditProduct.controls.soDienThoai?.dirty
+            || formEditProduct.controls.soDienThoai?.touched)">
+            Buzzz!
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="text" class="form-control" formControlName="email" required/>
+          <p class="text-danger"
+             *ngIf="formEditProduct.controls.email?.invalid && (formEditProduct.controls.email?.dirty
+            || formEditProduct.controls.email?.touched)">
+            Buzzz!
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Giờ đi:</label>
+          <input type="text" class="form-control" formControlName="gioDi" required/>
+          <p class="text-danger"
+             *ngIf="formEditProduct.controls.gioDi?.invalid && (formEditProduct.controls.gioDi?.dirty
+            || formEditProduct.controls.gioDi?.touched)">
+            Buzzz!
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Giờ đến:</label>
+          <input type="text" class="form-control" formControlName="gioDen" required/>
+          <p class="text-danger"
+             *ngIf="formEditProduct.controls.gioDen?.invalid && (formEditProduct.controls.gioDen?.dirty
+            || formEditProduct.controls.gioDen?.touched)">
+            Buzzz!
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Loại xe:</label>
+          <select formControlName="loaiXe">
+            <option *ngFor="let type of listCategory">{{type.name}}</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <div class="row d-flex justify-content-center">
+      <button mat-dialog-close class="btn btn-warning mr3">Cancel</button>
+      <button class="btn btn-success" type="submit" [disabled]="formEditProduct.invalid"
+              style="margin-left: 5px" (click)="editProductDialog()">
+        Create New Product
+      </button>
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
+</div>

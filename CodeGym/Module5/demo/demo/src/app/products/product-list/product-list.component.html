@@ -1,0 +1,67 @@
+<div class="container-fluid" style="background-color: #FAFAFA">
+<div class="row px-0 mx-0" style="margin-top: 5px">
+  <h2 class="d-flex" style="color: red">Quản lý vé</h2>
+  <div class="d-flex" style="margin-left: 52%">
+    <input class="form-control" type="text" placeholder="Search by Name"
+           [(ngModel)]="term">
+    <button class="btn btn-outline-success" style="margin-left: 5%">Search</button>
+  </div>
+  <div class="row" style="margin-left: 3px; margin-right: 3px; overflow-x: auto">
+    <button class="btn btn-outline-success font-italic font-weight-bolder border border-success" (click)="openAddNew()">
+      <i class="fa fa-plus-square"></i> Add New Dialog
+    </button>
+    <table class="table mt-3 table-striped">
+      <thead>
+      <tr>
+        <th>ID Vé</th>
+        <th>ID Car</th>
+        <th>Tên Khách Hàng</th>
+        <th>Ngày Bất Đầu</th>
+        <th>Ngày kết thúc</th>
+        <th>Tầng</th>
+        <th>Vị trí</th>
+        <th>Giá</th>
+        <th>Loại Vé</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        *ngFor="let product of productList| filter:term| orderBy: key : reverse | paginate: { itemsPerPage: 4, currentPage: p }">
+        <td>{{product.id}}</td>
+        <td>{{product.idCar}}</td>
+        <td>{{product.tenKhachHang}}</td>
+        <td>{{product.ngayBatDau}}</td>
+        <td>{{product.ngayKetThuc}}</td>
+        <td>{{product.tang}}</td>
+        <td>{{product.viTri}}</td>
+        <td>{{product.gia}}</td>
+        <td>{{product.loaiVe}}</td>
+        <td style="width: 220px; margin-left: 70px">
+          <button type="button" class="btn btn-outline-primary" (click)="openDialogEdit(product.id)"
+                  style="margin-right: 3px; color: #ee0500">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-counterclockwise" fill="currentColor"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"></path>
+              <path
+                d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"></path>
+            </svg>
+          </button>
+          <button type="button" class="btn btn-outline-primary" (click)="openDialogDelete(product.id)"
+                  style="color: #ee1000">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+              <path fill-rule="evenodd"
+                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+            </svg>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p= $event" style="margin-left: 55%"></pagination-controls>
+  </div>
+</div>
+</div>

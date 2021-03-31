@@ -1,0 +1,28 @@
+<h2>Today's article</h2>
+<hr>
+<div>
+  <a href="{{article.url}}" target="_blank">{{article.title}}</a><br>
+<textarea [value]="article.title" cols="70" id="article-title"></textarea><br>
+<textarea [value]="article.url" cols="70" id="article-url"></textarea><br>
+<input (click)="updateArticle()" type="button" value="Update"><br>
+</div>
+
+<div>
+  <div *ngFor="let art of articles">
+    <p>------------------------------------------------------<br></p>
+    <a href="{{art.url}}" target="_blank">{{art.title}}</a><br>
+  </div>
+</div>
+<div>
+  <p>------------------------------------------------------<br></p>
+  <app-likes></app-likes>
+  <br>
+</div>
+<div>
+  <p>------------------------------------------------------<br></p>
+  <textarea cols="70" id="articles-title"></textarea><br>
+  <textarea cols="70" id="articles-url"></textarea><br>
+  <button (click)="addArticle()">Add</button>
+</div>
+<hr>
+@CodeGym, 2019

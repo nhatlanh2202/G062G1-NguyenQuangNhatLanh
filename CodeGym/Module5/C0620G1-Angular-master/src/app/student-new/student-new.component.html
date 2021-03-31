@@ -1,0 +1,26 @@
+<div>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <td>Id</td>
+      <td>Name</td>
+      <td>Age</td>
+      <td>Mark</td>
+      <td>Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let student of studentInfor">
+      <tr>
+        <td>{{student.id}}</td>
+        <td>{{student.name}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.mark}}</td>
+        <td>
+          <a href="#detail" class="view" title="Detail" (click)=""
+        </td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>

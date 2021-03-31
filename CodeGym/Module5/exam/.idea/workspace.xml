@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cd9cd264-7156-422f-be16-cfb15a37d74d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Angular_Component_Template/.idea/Angular_Component_Template.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Angular_Component_Template/thuc_hanh/Hacker-new/src/app/hackernews/Articles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Case-Study/.idea/Case-Study.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Case-Study/furama/src/app/material.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Case-Study/furama/src/assets/anhg-10e44.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Case-Study/furama/src/json-server/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/.idea/demo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-add/customer-add.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-add/customer-add.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-add/customer-add.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-add/customer-add.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-delete/customer-delete.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-delete/customer-delete.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-delete/customer-delete.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-delete/customer-delete.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-edit/customer-edit.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-edit/customer-edit.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-edit/customer-edit.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-edit/customer-edit.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-list/customer-list.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-list/customer-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-list/customer-list.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-list/customer-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-view-detail/customer-view-detail.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-view-detail/customer-view-detail.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-view-detail/customer-view-detail.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/customer/customer-view-detail/customer-view-detail.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employe-edit/employe-edit.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employe-edit/employe-edit.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employe-edit/employe-edit.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employe-edit/employe-edit.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-add-new/employee-add-new.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-add-new/employee-add-new.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-add-new/employee-add-new.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-add-new/employee-add-new.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-list/employee-list.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-list/employee-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-list/employee-list.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-list/employee-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-view-detail/employee-view-detail.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-view-detail/employee-view-detail.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-view-detail/employee-view-detail.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employee-view-detail/employee-view-detail.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employyee-delete/employyee-delete.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employyee-delete/employyee-delete.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employyee-delete/employyee-delete.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/employee/employyee-delete/employyee-delete.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/home-page/home-page.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/home-page/home-page.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/home-page/home-page.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/home-page/home-page.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/material.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/model/contract.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/model/customer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/model/employee.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/model/service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/page-not-found/page-not-found.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/page-not-found/page-not-found.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/page-not-found/page-not-found.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/page-not-found/page-not-found.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/services/customer.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/app/services/employee.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/furama/src/json-server/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/json-server/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../student/.idea/student.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../student/student/src/app/student-detail/student-detail.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../student/student/src/app/student-detail/student-detail.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../student/student/src/app/student-detail/student-detail.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../student/student/src/app/student-new/IStudent.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../student/student/src/app/student-new/ListStudent.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../student/student/src/app/student-new/student-new.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../student/student/src/app/student-new/student-new.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../student/student/src/app/student-new/student-new.component.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1kogm3bEf1l13UgA3ASAa8eanEN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="D:\C062G1-Nguyen_Quang_Nhat_Lanh\G062G1-NguyenQuangNhatLanh\CodeGym\Module5\exam\exam\node_modules\typescript\lib" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cd9cd264-7156-422f-be16-cfb15a37d74d" name="Default Changelist" comment="" />
+      <created>1606372514078</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606372514078</updated>
+      <workItem from="1606372515547" duration="2642000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1606375415158">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606375415158" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1606375415157">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606375415157" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1606375415157">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606375415157" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1606375415158">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606375415158" />
+  </component>
+</project>

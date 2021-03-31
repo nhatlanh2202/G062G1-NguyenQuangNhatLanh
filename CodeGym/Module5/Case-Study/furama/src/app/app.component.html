@@ -1,0 +1,43 @@
+<div class="container-fluid px-0" style="height: 100vh">
+  <div class="row px-0 mx-0">
+    <nav class="navbar navbar-expand-sm bg-info" style="width: 100%; position: fixed; z-index: 1">
+      <!-- Brand -->
+      <a class="navbar-brand" href="#" style="color: #8b000a; font-weight: bold; font-family: 'Lobster', cursive">
+        Furama Da Nang</a>
+
+      <!-- Links -->
+      <ul class="navbar-nav" id="myCss">
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['']">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['customer']"> Customer</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['employee']">Employee</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['serviceFurama']">Service</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['contract']">Contract</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['contract-detail-list']">Contract Detail</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="row px-0 mx-0" style="margin-top: 56px">
+    <div class="col-sm-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

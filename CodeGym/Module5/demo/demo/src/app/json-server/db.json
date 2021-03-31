@@ -1,0 +1,36 @@
+{
+  "product": [
+    {
+      "idCar": "43A-0003",
+      "tenKhachHang": "Nguyễn Lành",
+      "ngayBatDau": "01/01/2020",
+      "ngayKetThuc": "01/02/2021",
+      "tang": "1",
+      "viTri": "A-13",
+      "gia": "3000",
+      "loaiVe": "Vip(Năm)",
+      "id": 1
+    },
+    {
+      "idCar": "43A-0003",
+      "tenKhachHang": "Mai Linh",
+      "ngayBatDau": "01/01/2020",
+      "ngayKetThuc": "01/02/2021",
+      "tang": "2",
+      "viTri": "A-14",
+      "gia": "3000",
+      "loaiVe": "thường(Tháng)",
+      "id": 2
+    }
+  ],
+  "loaiVe": [
+    {
+      "id": 1,
+      "name": "Vip(Năm)"
+    },
+    {
+      "id": 2,
+      "name": "thường(Tháng)"
+    }
+  ]
+}

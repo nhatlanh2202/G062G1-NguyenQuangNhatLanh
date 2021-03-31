@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+    <form [formGroup]="formAddDialog">
+      <div class="text-center">
+        <h3 class="modal-title w-100 dark-grey-text font-weight-bold my-2" id="add">
+          <strong>Create Dialog New Customer</strong></h3>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Id Product :</label>
+          <input type="text" class="form-control" formControlName="codeProduct" placeholder="SP-XXXX (X: 0-9)" required/>
+          <p class="text-danger"
+             *ngIf="formAddDialog.controls.codeProduct?.invalid && (formAddDialog.controls.codeProduct?.dirty
+            || formAddDialog.controls.codeProduct?.touched)">
+            Invalid ID ! Format ID: SP-XXXX with X: 0 - 9
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Name :</label>
+          <input type="text" class="form-control" formControlName="nameProduct" required/>
+          <p class="text-danger"
+             *ngIf="formAddDialog.controls.nameProduct?.invalid && (formAddDialog.controls.nameProduct?.dirty
+            || formAddDialog.controls.nameProduct?.touched)">
+            Invalid name!
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Producer :</label>
+          <input type="text" class="form-control" formControlName="producer" required/>
+          <p class="text-danger"
+             *ngIf="formAddDialog.controls.producer?.invalid && (formAddDialog.controls.producer?.dirty
+            || formAddDialog.controls.producer?.touched)">
+            Invalid phone!
+          </p>
+        </div>
+
+        <div class="form-group">
+          <label>Category :</label>
+          <select formControlName="category">
+            <option *ngFor="let type of listCategory">{{type.name}}</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <div class="row d-flex justify-content-center">
+      <button mat-dialog-close class="btn btn-warning mr3">Cancel</button>
+      <button class="btn btn-success" type="submit" [disabled]="formAddDialog.invalid"
+              style="margin-left: 5px" (click)="addNewProductDialog()">
+        Create New Product</button>
+    </div>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
