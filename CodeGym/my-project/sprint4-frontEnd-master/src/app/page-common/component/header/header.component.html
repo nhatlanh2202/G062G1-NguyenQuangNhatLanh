@@ -1,0 +1,211 @@
+<!-- Header Section Begin -->
+<header class="header">
+  <div class="header__top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <div class="header__top__left">
+            <ul>
+              <li><i class="fa fa-envelope"></i> thucphamsach@gmail.com</li>
+              <li> Giao hàng Miễn phí cho tất cả Đơn hàng 100k</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <div class="header__top__right">
+            <div class="header__top__right__social">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="#"><i class="fa fa-pinterest-p"></i></a>
+            </div>
+            <div class="header__top__right__language">
+              <img src="../../../../assets/img/vietnam.png" alt="" style="width: 27px; height: 14px">
+              <div>Tiếng việt</div>
+              <span class="arrow_carrot-down"></span>
+              <ul>
+                <li><a href="#">Tiếng việt</a></li>
+                <li><a href="#">Tiếng anh</a></li>
+              </ul>
+            </div>
+
+            <div class="header__top__right__auth" *ngIf="isLoggedIn == false; else block">
+              <a role="button" data-toggle="modal" data-target="#loginModal"><i class="fa fa-user"></i> Đăng nhập</a>
+            </div>
+            <ng-template #block>
+              <div class="header__top__right__auth dropdown">
+                <i class="far fa-user-circle dropbtn"></i> <span class="text-dark font-weight-bold">&nbsp;{{user.fullName}}</span>
+                <div class="dropdown-content">
+                  <a (click)="logout()"><i class="fas fa-sign-out-alt" style="margin-right: 40px">&nbsp;Đăng xuất</i></a>
+                  <a data-toggle="modal" data-target="#myModal"><i class="fas fa-users-cog" style="margin-right: 40px">&nbsp;&nbsp;Cài đặt&nbsp;&nbsp;&nbsp;</i></a>
+                  <a (click)="routerManager()" *ngIf="role == 'ROLE_ADMIN'"><i class="fas fa-cogs" style="margin-right: 40px">&nbsp;&nbsp;Quản lí&nbsp;&nbsp;&nbsp;</i></a>
+                  <a [routerLink]="['history']" ><i class="fas fa-file-invoice" style="margin-right: 40px">&nbsp;&nbsp;&nbsp;Lịch sử&nbsp;&nbsp;&nbsp;</i></a>
+                </div>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="header__logo">
+          <a href="./#"><img src="../../../../assets/img/logo.png" alt=""></a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <nav class="header__menu">
+          <ul>
+            <li class="active"><a href="./#">TRANG CHỦ</a></li>
+            <li><a [routerLink]="['list-goods']" >CỬA HÀNG</a></li>
+            <li><a  >CHI TIẾT</a>
+              <ul class="header__menu__dropdown">
+                <li><a [routerLink]="['bill-goods']">Giỏ hàng</a></li>
+                <li><a [routerLink]="['check-out']">Thủ tục thanh toán</a></li>
+                <li><a [routerLink]="['blog']">Bài viết</a></li>
+              </ul>
+            </li>
+            <li><a [routerLink]="['contact']">LIÊN HỆ</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="col-lg-3">
+        <div class="header__cart">
+          <ul>
+            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+          </ul>
+          <div class="header__cart__price">Mục: <span>100 Xu</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="humberger__open">
+      <i class="fa fa-bars"></i>
+    </div>
+  </div>
+</header>
+<!-- Header Section End -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" id="abc-modal" role="document">
+    <div class="modal-content" id="abc-modal-content">
+      <div class="modal-header border-bottom-0">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-title text-center">
+          <h4 class="font-weight-bold">Đăng nhập</h4>
+        </div>
+        <div class="d-flex flex-column text-center">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+            <div class="form-group">
+             <input type="text" class="form-control" formControlName="username"
+                                                 placeholder="Nhập tên tài khoản của bạn...">
+            </div>
+            <div class="form-group">
+           <input [type]="inputType" class="form-control" formControlName="password"
+                                                    placeholder="Mã mật khẩu...">
+            </div>
+            <div class="form-group d-flex justify-content-start">
+              <input type="checkbox"  class="mt-1" (click)=displayPassword()>&nbsp;&nbsp;Hiển thị mật khẩu <a class="ml-5" (click)="reset()" data-dismiss="modal" >Quên mật khẩu?</a>
+            </div>
+            <div class="form-group" *ngIf="errorMessage != ''">
+              <p role="alert" class="alert alert-danger">{{errorMessage}}</p>
+            </div>
+            <button type="submit" class="site-btn form-control" style="background-color: #7fad39;">Đăng nhập</button>
+          </form>
+
+          <div class="text-center text-muted delimiter">Hoặc đăng nhập qua</div>
+          <div class="d-flex justify-content-center social-buttons">
+
+            <button (click)="signInWithGoogle()" type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top">
+              <i class="fab fa-google-plus"></i>
+            </button>
+            <button (click)="signInWithFB()" type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top">
+              <i class="fab fa-facebook"></i>
+            </button>
+            <button  type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top">
+              <i class="fab fa-twitter"></i>
+            </button>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <div class="signup-section">Bạn chưa là thành viên? <a href="#" class="text-info"> Đăng ký</a>.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="font-weight-bold offset-4">Thông tin tài khoản của bạn</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-10 row">
+              <div class="col-3">
+                <p class="font-weight-bold ">Mã thành viên: </p>
+                <p class="font-weight-bold mt-4">Tên đăng nhập: </p>
+                <p class="font-weight-bold mt-4">Email: </p>
+                <p class="font-weight-bold mt-4">Họ và tên: </p>
+                <p class="font-weight-bold mt-4">Địa chỉ: </p>
+                <p class="font-weight-bold mt-4">Số điện thoại: </p>
+              </div>
+              <div class="col-9">
+                <form [formGroup]="formEdit">
+                <input formControlName="idUser" class="form-control">
+                <input formControlName="username" class="form-control mt-2">
+                <input formControlName="email" class="form-control mt-2">
+                <input formControlName="fullName" class="form-control mt-2">
+                <input formControlName="address" class="form-control mt-2">
+                <input formControlName="phoneNumber" class="form-control mt-2">
+                </form>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="row">
+                <p class="font-weight-bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ảnh</p>
+                <div class="text-center">
+                  <img [src]="url"
+                       alt="Xin vui lòng chọn ảnh!!!" style="color: darkred; font-size: 20px;
+       width: 290px; height: 240px" class="img-thumbnail" (click)="fileUploader.click()">
+                  <div class="col-6 mt-3">
+                    <input type="file" accept="image/*" class="form-control form-control-sm"
+                           id="images" #fileUploader (change)="showPreview($event)" style="display: none;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+          <button type="button" class="btn btn-warning" data-dismiss="modal" (click)="setAccount()">Cập nhật</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
